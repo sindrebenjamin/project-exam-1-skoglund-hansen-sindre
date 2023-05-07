@@ -1,0 +1,117 @@
+:root {
+    --nøytral100: #fafbfc;
+    --nøytral200: #eeeeee;
+    --nøytral300: #c5c5c5;
+    --nøytral400: #a0a0a0;
+    --nøytral500: #7d7d7d;
+    --nøytral600: #646464;
+    --nøytral700: #353535;
+    --nøytral800: #111111;
+}
+
+
+/* Typography */
+
+.display-large {
+    font-size: 57px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.display-medium {
+    font-size: 45px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.display-small {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.heading-large {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.heading-medium {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.heading-small {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.title-large {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.title-medium {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.title-small {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.body-large {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.body-medium {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.body-small {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+}
+
+.label-large {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 0.1;
+}
+
+.label-medium {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 0.5;
+}
+
+.label-small {
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: normal;
+    letter-spacing: 0.5;
+}
+
+
+/* Misc */
+
+.elevation {
+    box-shadow: 0px 4px 0px #111111;
+}
+
+.border-radius {
+    border-radius: 8px;
+}

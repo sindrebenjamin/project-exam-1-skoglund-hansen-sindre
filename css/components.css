@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.flex {
+    display: flex;
+}
+
+
+/* Buttons */
+
+.button-outlined,
+.button-outlined-small,
+.button-filled {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button-outlined,
+.button-outlined-small {
+    border: 1px solid var(--nøytral800);
+    color: var(--nøytral800);
+    background-color: white;
+}
+
+
+
+.button-outlined {
+    font-size: 14px;
+    padding: 8px 24px;
+    box-shadow: 0px 4px 0px var(--nøytral800);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transform: translateY(0);
+}
+
+.button-outlined:hover {
+    background-color: var(--nøytral200);
+    box-shadow: 0px 0px 0px var(--nøytral800);
+    transform: translateY(4px);
+}
+
+
+
+.button-outlined-small {
+    font-size: 11px;
+    padding: 8px;
+}
+
+.button-outlined-small:hover {
+    background-color: var(--nøytral200);
+}
+
+
+.button-filled {
+    font-size: 14px;
+    padding: 8px 24px;
+    color: white;
+    background-color: var(--nøytral800);
+
+}
+
+
+
+/* Logo */
+
+a.logo {
+    text-decoration: none;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    align-items: center;
+}
+
+.logo-heavy {
+    font-weight: bold;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script defer src="../js/post.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/post.css" />
+  </head>
+  <body>
+    <main>
+      <article class="blog-post"></article>
+      <section class="comment-section"></section>
+
+      <form id="comment-form">
+        <div>
+          <label for="comment-author">Name *</label>
+          <input type="text" name="author_name" id="comment-author" required />
+        </div>
+        <div>
+          <label for="comment-email">Email *</label>
+          <input type="email" name="author_email" id="comment-email" required />
+        </div>
+
+        <div>
+          <label for="comment-content">Comment *</label>
+          <textarea
+            name="content"
+            id="comment-content"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <button type="submit">Post Comment</button>
+      </form>
+    </main>
+  </body>
+</html>
