@@ -1,0 +1,45 @@
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/about_banner.png), rgba(0,0,0,0.5);
+    background-size: cover;
+    height: 200px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+article img {
+    object-fit: cover;
+    width: 100%;
+
+    max-height: 580px;
+    margin: 1rem 0;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+article p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+article h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 932px) {
+    .banner {
+        height: 300px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    
+}
