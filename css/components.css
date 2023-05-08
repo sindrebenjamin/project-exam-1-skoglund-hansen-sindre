@@ -59,8 +59,16 @@
     padding: 8px 24px;
     color: white;
     background-color: var(--nøytral800);
+    border: transparent;
+}
+
+
+.button-filled:hover {
+
+    background-color: var(--nøytral700);
 
 }
+
 
 
 
@@ -78,4 +86,11 @@ a.logo {
 
 .logo-heavy {
     font-weight: bold;
+}
+
+
+/* Forms */
+
+input[type="text"] {
+    font-family:'Montserrat', sans-serif;;
 }

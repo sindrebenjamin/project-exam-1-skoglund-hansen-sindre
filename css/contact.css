@@ -1,0 +1,65 @@
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/contact_banner.png), rgba(0,0,0,0.5);
+    background-size: cover;
+    height: 200px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contact-person-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-person-container img {
+    width: 120px;
+    border-radius: 500px;
+}
+
+.contact-person-container h3 {
+    font-size: 16px;
+}
+
+.job-title {
+    font-style: italic;
+    /* color: var(--nøytral500); */
+}
+
+.team-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+
+/* Form */
+
+.contact-introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-introduction a {
+    color: var(--nøytral800);
+    text-decoration: underline;
+}
+
+.contact-introduction img {
+    max-width: 167px;
+    align-self: center;
+}
+
+.contact-form {
+    border: 1px solid var(--nøytral800);
+    font-size: 14px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+}

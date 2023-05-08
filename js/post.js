@@ -1,5 +1,9 @@
 //key: ]K;(3}.2J)Ej~S2a|.J|W+|c7{9_h@xts>;S&v/0A~(+s+%mZy0_*Ee.YP]25XwV
 
+
+
+
+
 const title = document.querySelector("title");
 const article = document.querySelector("article");
 const commentSection = document.querySelector(".comment-section");
@@ -10,6 +14,7 @@ async function fetchData() {
 
     const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts/${postId}?_embed`)
     const result = await response.json();
+    console.log(result);
     printData(result)
 }
 
@@ -30,7 +35,7 @@ function printData(data) {
 
     //Title
 
-    const blogTitle = document.createElement("p");
+    const blogTitle = document.createElement("h1");
     blogTitle.classList.add("blog-title");
     blogTitle.innerHTML = data.title.rendered;
    
@@ -38,13 +43,21 @@ function printData(data) {
 
    //Content
 
-    const blogContent = document.createElement("article");
+    const blogContent = document.createElement("div");
     blogContent.innerHTML = data.content.rendered;
-    // console.log(blogContent);
+   
+
+    //Author
+    const authorBlock = document.createElement("div");
+    authorBlock.classList.add("author-block");
+    authorBlock.innerHTML = `<img src=${data._embedded.author[0].avatar_urls[48]} alt="avatar" class="author-avatar"> <p class="author-name">${data._embedded.author[0].name}</p>
+    ${data._embedded.author[0].description} `;
+
 
     article.appendChild(blogCategory);
     article.appendChild(blogTitle);
     article.appendChild(blogContent);
+    article.appendChild(authorBlock);
     
 }
 
@@ -63,9 +76,13 @@ fetchComments()
 function printComments(comments) {
 console.log(comments);
 
+const commentNumber = document.querySelector(".comment-number");
+
+commentNumber.innerHTML = comments.length + ` `;
+
 
     for (let i = 0; i < comments.length; i++) {
-
+        
         const dateString = comments[i].date;
         const date = new Date(dateString);
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -74,7 +91,7 @@ console.log(comments);
 
         const comment = document.createElement("div");
         comment.classList.add("comment");
-        comment.innerHTML = `
+        comment.innerHTML = `<div class="comment-wrapper">
         <div class="comment-info">
             <img src=${comments[i].author_avatar_urls[48]} alt="avatar" class="comment-avatar">
             <p class="comment-author">${comments[i].author_name}</p>
@@ -83,6 +100,7 @@ console.log(comments);
         <div class="comment-content">
             <p>${comments[i].content.rendered}</p>
         </div>
+    </div>
         `
         commentSection.appendChild(comment);
     }

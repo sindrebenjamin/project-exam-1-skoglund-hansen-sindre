@@ -1,8 +1,8 @@
 header {
     background-color: var(--nøytral800);
     align-items: center;
-    padding: 2rem;
     position: relative;
+    min-height: 56px;
 }
 
 /* * {
@@ -45,6 +45,69 @@ header {
     background-color: var(--nøytral800);
 }
 
+/* Logo */
+
+.logo {
+   margin-left: 1rem;
+} 
+
+/* Search */
+
+
+.search-bar-form {
+    display: none;
+    flex-grow: 1;
+    max-width: 600px;
+    margin-left: 1rem;
+}
+
+
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    padding: 6px 16px;
+    flex-grow: 1;
+    min-width: 100%;
+}
+
+.search-input {
+    outline: transparent;
+    border: transparent;
+    flex-grow: 1;
+}
+
+
+/* searchbar active */
+
+.search-bar-form.open {
+    display: flex;
+}
+
+.icon-search.open {
+    display: none;
+}
+
+.logo.open {
+    display: none;
+}
+
+/* Icons */
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.icon-search {
+    display: flex;
+    margin-right: 1.5rem;
+    padding: 1rem;
+}
+ 
 
 /* Burger menu */
 
@@ -56,6 +119,9 @@ header {
     z-index: 1000;
     width: fit-content;
     right: 12px;
+    padding: 1rem;
+    margin-left: 1.5rem;
+
 }
 
 .menu-btn-burger,
@@ -72,11 +138,11 @@ header {
 }
 
 .menu-btn-burger::before {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
 }
 
 .menu-btn-burger::after {
-    transform: translateY(10px);
+    transform: translateY(7px);
 }
 
 
@@ -107,4 +173,65 @@ header {
 
 body.no-scroll {
     overflow: hidden;
+}
+
+@media (min-width: 600px) {
+    .icon-search {
+        display: none;
+    }
+
+    .search-bar-form {
+        display: flex;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+    .icon-wrapper {
+        display: none;
+    
+    }
+
+    .mobile-nav-wrapper {
+        position: static;
+        width: fit-content;
+    }
+
+    .mobile-nav-overlay {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        background-color: transparent;
+        width: fit-content;
+        
+    }
+
+    .mobile-nav a {
+        font-size: 14px;
+        color: var(--nøytral400);
+        transition: 0.2s;
+    }
+
+    .mobile-nav a:hover {
+        color: white;
+    }
+
+    .search-bar-form {
+        margin-left: 0;
+    }
+
+    .logo {
+        margin-left: 0rem;
+     } 
+
+     header {
+        padding: 0 1.5rem;
+     }
+
+
 }
