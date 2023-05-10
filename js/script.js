@@ -50,13 +50,16 @@ const blogContainer = document.querySelector(".blog-card-container");
 
 async function fetchData() {
 
-    const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed")
+    const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed");
     const result = await response.json();
     printData(result)
+    printFeatured(result);
     console.log(result);
 }
 
 fetchData();
+
+
 
 
 function printData(data) {

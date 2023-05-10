@@ -6,7 +6,7 @@
 
 
 @media (min-width: 936px) {
-    .big-blog-card {
+    .featured-container {
         border-radius: 8px;
         box-shadow: 0px 4px 0px var(--nøytral800);
         border: 1px solid var(--nøytral600);
