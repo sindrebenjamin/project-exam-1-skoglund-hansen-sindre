@@ -1,3 +1,4 @@
+
 // Search icon
 
 const searchIcon = document.querySelector(".icon-search");

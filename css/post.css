@@ -11,6 +11,14 @@
     margin-bottom: 2rem;
 }
 
+article {
+    margin-top: 2rem;
+}
+
+article li {
+    margin-bottom: 1rem;
+}
+
 article img {
     object-fit: cover;
     width: 100%;

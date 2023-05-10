@@ -30,8 +30,7 @@ body {
 
 
 @media  (min-width: 932px) {
-    .page-container,
-    .hero {
+    .page-container {
         max-width: 900px;
         margin: 0 auto;
     }

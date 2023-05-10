@@ -72,6 +72,7 @@
         <div class="menu-btn-burger"></div>
       </div>
     </div>
+
     <div class="mobile-nav-wrapper">
       <div class="mobile-nav-overlay"></div>
       <nav class="mobile-nav">
@@ -83,6 +84,24 @@
     </div>
   </header>
   <body>
-    <div class="blog-card-container"></div>
+    <div class="banner"><h1>Blog</h1></div>
+    <div class="page-container-blog">
+      <main>
+        <div class="blog-card-container">
+          <div class="sort-wrapper">
+            <labelfor="sort-by">
+              Sort by:
+              
+            </label>
+            <select name="sort-by" id="sort-by">
+              <option value="alpha-asc">Alphabetical (A-Z)</option>
+              <option value="alpha-desc">Alphabetical (Z-A)</option>
+              <option value="date-asc">Date (Oldest First)</option>
+              <option value="date-desc">Date (Newest First)</option>
+            </select>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
