@@ -1,0 +1,20 @@
+.blog-categories {
+    background-color: var(--nøytral800);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.category-box {
+    padding: 2rem;
+    background-color: var(--nøytral800);
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}

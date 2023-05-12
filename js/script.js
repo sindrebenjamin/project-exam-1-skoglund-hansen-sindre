@@ -46,18 +46,57 @@ function toggleMenu() {
 
 // Blog
 
+const categories = new URLSearchParams(window.location.search).get('categories');
+const loadMore = document.querySelector(".load-more");
+
+console.log(categories);
+
 const blogContainer = document.querySelector(".blog-card-container");
+let page=1;
 
 async function fetchData() {
+    try {
+        if (categories==null) {
+        
+            const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed&page=${page}`);
+            const result = await response.json();
+            printData(result)
+            console.log(result);
+            } else {
+                console.log("not empty");
+                const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed&categories=${categories}`);
+            const result = await response.json();
+            printData(result)
+            console.log(result);
+            }
+    }
+    catch(error) {
+        blogContainer.innerHTML = "An error occured";
+        console.log(error);
+    }
 
-    const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed");
-    const result = await response.json();
-    printData(result)
-    printFeatured(result);
-    console.log(result);
+   
+
+    
+}
+
+loadMore.onclick = function() {
+    if (categories==null) {
+        page++;
+        fetchData();
+    }
 }
 
 fetchData();
+
+// Sort
+
+const sortBy = document.querySelector("#sort-by");
+
+sortBy.onchange = function() {
+    const sortByValue = sortBy.value;
+    console.log(sortByValue);
+}
 
 
 

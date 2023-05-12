@@ -1,3 +1,63 @@
+const musicTheoryButton = document.querySelector(".music-theory-category");
+const inspirationButton = document.querySelector(".inspiration-category");
+const gearButton = document.querySelector(".gear-category");
+const mixingMasteringButton = document.querySelector(".mixing-mastering-category");
+const productionButton = document.querySelector(".production-category");
+const soundDesignButton = document.querySelector(".sound-design-category");
+
+// const categoryButtons = [musicTheoryButton, inspirationButton, gearButton, mixingMasteringButton, productionButton, soundDesignButton];
+
+// categoryButtons.forEach(function(category){
+//   category.onclick = function() {
+//     console.log(category);
+//   }
+// })
+
+ soundDesignButton.onclick = function() {
+     const categories = [67];
+     const urlParams = new URLSearchParams(window.location.search);
+     urlParams.set('categories', categories[0]);
+     window.location.href = `../pages/blog.html?${urlParams}`;
+ }
+
+productionButton.onclick = function() {
+    const categories = [63];
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('categories', categories[0]);
+    window.location.href = `../pages/blog.html?${urlParams}`;
+}
+
+mixingMasteringButton.onclick = function() {
+    const categories = [52];
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('categories', categories[0]);
+    window.location.href = `../pages/blog.html?${urlParams}`;
+}
+
+gearButton.onclick = function() {
+    const categories = [40];
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('categories', categories[0]);
+    window.location.href = `../pages/blog.html?${urlParams}`;
+}
+
+inspirationButton.onclick = function() {
+    const categories = [46];
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('categories', categories[0]);
+    window.location.href = `../pages/blog.html?${urlParams}`;
+}
+
+musicTheoryButton.onclick = function() {
+    const categories = [59];
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('categories', categories[0]);
+    window.location.href = `../pages/blog.html?${urlParams}`;
+}
+
+
+// Featured
+
 const featuredContainer = document.querySelector(".featured-container");
 
 
@@ -36,6 +96,7 @@ function printFeatured(data) {
         const blogImage = document.createElement("img");
         blogImage.classList.add("blog-image-featured");
         blogImage.src = data[featuredNumber]._embedded['wp:featuredmedia'][0].source_url;
+        blogImage.alt = data[featuredNumber]._embedded['wp:featuredmedia'][0].alt_text;
 
         //Category
 
@@ -62,8 +123,15 @@ function printFeatured(data) {
         //Title
 
         const blogTitle = document.createElement("p");
-        blogTitle.classList.add("blog-title");
+        blogTitle.classList.add("blog-title-featured");
         blogTitle.innerHTML = data[featuredNumber].title.rendered;
+
+
+        //Excerpt
+
+        const blogExcerpt = document.createElement("p");
+        blogExcerpt.classList.add("blog-excerpt");
+        blogExcerpt.innerHTML = data[featuredNumber].excerpt.rendered;
      
 
         //Blog-card
@@ -71,16 +139,29 @@ function printFeatured(data) {
         const blogCard = document.createElement("a");
         blogCard.classList.add("blog-card-featured");
         blogCard.href=`../pages/post.html?id=${data[featuredNumber].id}`;
-        blogCard.appendChild(blogImage);
+      
         blogCard.appendChild(blogCategoryDate);
         blogCard.appendChild(blogTitle);
+        blogCard.appendChild(blogExcerpt);
+        blogCard.innerHTML += `<a href="../pages/post.html?id=${data[featuredNumber].id}"><button class="button-outlined">
+        <span>Read more</span
+        ><svg
+          width="15"
+          height="8"
+          viewBox="0 0 15 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z"
+            fill="#111111"
+          />
+        </svg>
+      </button></a>`;
 
 
         //Post
-      
+        featuredContainer.appendChild(blogImage);
         featuredContainer.appendChild(blogCard);
-        console.log(featuredContainer);
-       
- 
-  
+        
 }

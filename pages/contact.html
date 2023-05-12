@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MixPath | Contact</title>
     <script defer src="../js/script.js"></script>
+    <script defer src="../js/contact.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/variables.css" />
@@ -110,7 +111,10 @@
             <p class="contact-email">midjourney@mixpath.com</p>
           </div>
         </div>
-        <form class="contact-form" action="">
+
+        <!-- Form -->
+
+        <form id="contact-form" class="contact-form" action="">
           <div class="contact-introduction">
             <h2>Send us a message</h2>
             <p>
@@ -143,7 +147,7 @@
                 id="name"
               />
             </div>
-
+            <div class="error" id="name-error"><p>Name error here!</p></div>
             <div class="input-label-wrapper">
               <label for="email">Email</label>
               <input
@@ -153,6 +157,7 @@
                 id="email"
               />
             </div>
+            <div class="error" id="email-error"><p>Email error here!</p></div>
             <div class="input-label-wrapper">
               <label for="subject">Subject</label>
               <input
@@ -162,6 +167,9 @@
                 id="subject"
               />
             </div>
+            <div class="error" id="subject-error">
+              <p>Subject error here!</p>
+            </div>
             <div class="input-label-wrapper">
               <label for="message">Comment</label>
               <textarea
@@ -170,6 +178,9 @@
                 id="message"
                 rows="5"
               ></textarea>
+            </div>
+            <div class="error" id="message-error">
+              <p>Message error here!</p>
             </div>
             <button class="button-outlined" type="submit">
               <span>Send</span
