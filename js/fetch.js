@@ -5,13 +5,8 @@ const mixingMasteringButton = document.querySelector(".mixing-mastering-category
 const productionButton = document.querySelector(".production-category");
 const soundDesignButton = document.querySelector(".sound-design-category");
 
-// const categoryButtons = [musicTheoryButton, inspirationButton, gearButton, mixingMasteringButton, productionButton, soundDesignButton];
 
-// categoryButtons.forEach(function(category){
-//   category.onclick = function() {
-//     console.log(category);
-//   }
-// })
+// Rydd opp i denne koden
 
  soundDesignButton.onclick = function() {
      const categories = [67];
@@ -67,19 +62,205 @@ async function fetchData() {
 
     const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed");
     const result = await response.json();
+
     printFeatured(result);
+    printCarousel(result);
 }
 
 fetchData();
 
 
+function printCarousel(data) {
+
+  console.log(data);
+
+  
+
+  const slide1 = document.querySelector(".slide-1");
+  const slide2 = document.querySelector(".slide-2");
+  const slide3 = document.querySelector(".slide-3");
+
+  for (let i = 0; i < data.length; i++) {
+
+  const dateString = data[i].date;
+  const date = new Date(dateString);
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options);
+    //Image
+
+    const blogImage = document.createElement("img");
+    blogImage.classList.add("blog-image");
+    blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+
+    //Category
+
+    const blogCategory = document.createElement("div");
+    blogCategory.classList.add("blog-category", "border-radius");
+    blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
+    console.log(blogCategory);
+
+    //Date
+
+    const blogDate = document.createElement("p");
+    blogDate.classList.add("blog-date");
+    blogDate.innerHTML = formattedDate;
+    console.log(blogDate);
+
+    //Category-date
+
+    const blogCategoryDate = document.createElement("div");
+    blogCategoryDate.classList.add("flex", "blog-category-date");
+    blogCategoryDate.appendChild(blogCategory);
+    blogCategoryDate.appendChild(blogDate);
+    
+
+    //Title
+
+    const blogTitle = document.createElement("p");
+    blogTitle.classList.add("blog-title");
+    blogTitle.innerHTML = data[i].title.rendered;
+ 
+
+    //Blog-card
+
+    const blogCard = document.createElement("a");
+    blogCard.classList.add("blog-card", "border-radius");
+    blogCard.href=`../pages/post.html?id=${data[i].id}`;
+    blogCard.appendChild(blogImage);
+    blogCard.appendChild(blogCategoryDate);
+    blogCard.appendChild(blogTitle);
+
+    slide1.appendChild(blogCard);
+
+    if (i === 2) {
+      break;
+    }
+  }
+
+  for (let i = 3; i < data.length; i++) {
+    const dateString = data[i].date;
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+      //Image
+  
+      const blogImage = document.createElement("img");
+      blogImage.classList.add("blog-image");
+      blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+  
+      //Category
+  
+      const blogCategory = document.createElement("div");
+      blogCategory.classList.add("blog-category", "border-radius");
+      blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
+      console.log(blogCategory);
+  
+      //Date
+  
+      const blogDate = document.createElement("p");
+      blogDate.classList.add("blog-date");
+      blogDate.innerHTML = formattedDate;
+      console.log(blogDate);
+  
+      //Category-date
+  
+      const blogCategoryDate = document.createElement("div");
+      blogCategoryDate.classList.add("flex", "blog-category-date");
+      blogCategoryDate.appendChild(blogCategory);
+      blogCategoryDate.appendChild(blogDate);
+      
+  
+      //Title
+  
+      const blogTitle = document.createElement("p");
+      blogTitle.classList.add("blog-title");
+      blogTitle.innerHTML = data[i].title.rendered;
+   
+  
+      //Blog-card
+  
+      const blogCard = document.createElement("a");
+      blogCard.classList.add("blog-card", "border-radius");
+      blogCard.href=`../pages/post.html?id=${data[i].id}`;
+      blogCard.appendChild(blogImage);
+      blogCard.appendChild(blogCategoryDate);
+      blogCard.appendChild(blogTitle);
+  
+      slide2.appendChild(blogCard);
+  
+      if (i === 5) {
+        break;
+      }
+
+    
+  }
+
+  for (let i = 6; i < data.length; i++) {
+    const dateString = data[i].date;
+    const date = new Date(dateString);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-US', options);
+      //Image
+  
+      const blogImage = document.createElement("img");
+      blogImage.classList.add("blog-image");
+      blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+  
+      //Category
+  
+      const blogCategory = document.createElement("div");
+      blogCategory.classList.add("blog-category", "border-radius");
+      blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
+      console.log(blogCategory);
+  
+      //Date
+  
+      const blogDate = document.createElement("p");
+      blogDate.classList.add("blog-date");
+      blogDate.innerHTML = formattedDate;
+      console.log(blogDate);
+  
+      //Category-date
+  
+      const blogCategoryDate = document.createElement("div");
+      blogCategoryDate.classList.add("flex", "blog-category-date");
+      blogCategoryDate.appendChild(blogCategory);
+      blogCategoryDate.appendChild(blogDate);
+      
+  
+      //Title
+  
+      const blogTitle = document.createElement("p");
+      blogTitle.classList.add("blog-title");
+      blogTitle.innerHTML = data[i].title.rendered;
+   
+  
+      //Blog-card
+  
+      const blogCard = document.createElement("a");
+      blogCard.classList.add("blog-card", "border-radius");
+      blogCard.href=`../pages/post.html?id=${data[i].id}`;
+      blogCard.appendChild(blogImage);
+      blogCard.appendChild(blogCategoryDate);
+      blogCard.appendChild(blogTitle);
+  
+      slide3.appendChild(blogCard);
+  
+      if (i === 8) {
+        break;
+      }
+
+      
+
+  }
+
+}
+
 function printFeatured(data) {
-    console.log(data)
 
     let featuredNumber = 3;
 
 
-    console.log(data[featuredNumber].title.rendered);
     const dateString = data[featuredNumber].date;
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };

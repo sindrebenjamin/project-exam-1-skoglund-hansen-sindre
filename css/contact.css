@@ -6,7 +6,7 @@
     padding: 0.3rem;
     margin-top: -0.5rem;
     margin-bottom: 1rem;
-    display: block;
+    display: none;
 }
 
 .banner {
@@ -41,7 +41,6 @@
 
 .job-title {
     font-style: italic;
-    /* color: var(--nøytral500); */
 }
 
 .team-header {

@@ -22,7 +22,7 @@ fetchData();
 
 function printData(data) {
 
-    title.innerHTML = data.title.rendered;
+    title.innerHTML = `MixPath | ` + data.title.rendered;
 
 
     //Category

@@ -23,7 +23,7 @@ article img {
     object-fit: cover;
     width: 100%;
 
-    max-height: 580px;
+    max-height: 260px;
     margin: 1rem 0;
 }
 
@@ -168,6 +168,11 @@ article p {
 
 
 @media (min-width: 936px) {
+
+
+    article img {
+        max-height: 580px;
+    }
 
     .wp-block-cover__image-background {
         height: 580px;
