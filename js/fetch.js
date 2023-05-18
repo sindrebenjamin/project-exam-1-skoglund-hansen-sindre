@@ -120,15 +120,21 @@ function printCarousel(data) {
     blogTitle.classList.add("blog-title");
     blogTitle.innerHTML = data[i].title.rendered;
  
+      //Blog-text 
 
-    //Blog-card
-
-    const blogCard = document.createElement("a");
-    blogCard.classList.add("blog-card", "border-radius");
-    blogCard.href=`../pages/post.html?id=${data[i].id}`;
-    blogCard.appendChild(blogImage);
-    blogCard.appendChild(blogCategoryDate);
-    blogCard.appendChild(blogTitle);
+      const blogText = document.createElement("div");
+      blogText.classList.add("blog-text");
+      blogText.appendChild(blogCategoryDate);
+      blogText.appendChild(blogTitle);
+   
+  
+      //Blog-card
+  
+      const blogCard = document.createElement("a");
+      blogCard.classList.add("blog-card", "border-radius");
+      blogCard.href=`../pages/post.html?id=${data[i].id}`;
+      blogCard.appendChild(blogImage);
+      blogCard.appendChild(blogText);
 
     slide1.appendChild(blogCard);
 
@@ -175,16 +181,23 @@ function printCarousel(data) {
       const blogTitle = document.createElement("p");
       blogTitle.classList.add("blog-title");
       blogTitle.innerHTML = data[i].title.rendered;
-   
-  
-      //Blog-card
-  
-      const blogCard = document.createElement("a");
-      blogCard.classList.add("blog-card", "border-radius");
-      blogCard.href=`../pages/post.html?id=${data[i].id}`;
-      blogCard.appendChild(blogImage);
-      blogCard.appendChild(blogCategoryDate);
-      blogCard.appendChild(blogTitle);
+
+
+         //Blog-text 
+
+         const blogText = document.createElement("div");
+         blogText.classList.add("blog-text");
+         blogText.appendChild(blogCategoryDate);
+         blogText.appendChild(blogTitle);
+      
+     
+         //Blog-card
+     
+         const blogCard = document.createElement("a");
+         blogCard.classList.add("blog-card", "border-radius");
+         blogCard.href=`../pages/post.html?id=${data[i].id}`;
+         blogCard.appendChild(blogImage);
+         blogCard.appendChild(blogText);
   
       slide2.appendChild(blogCard);
   
@@ -233,6 +246,13 @@ function printCarousel(data) {
       const blogTitle = document.createElement("p");
       blogTitle.classList.add("blog-title");
       blogTitle.innerHTML = data[i].title.rendered;
+
+      //Blog-text 
+
+      const blogText = document.createElement("div");
+      blogText.classList.add("blog-text");
+      blogText.appendChild(blogCategoryDate);
+      blogText.appendChild(blogTitle);
    
   
       //Blog-card
@@ -241,8 +261,8 @@ function printCarousel(data) {
       blogCard.classList.add("blog-card", "border-radius");
       blogCard.href=`../pages/post.html?id=${data[i].id}`;
       blogCard.appendChild(blogImage);
-      blogCard.appendChild(blogCategoryDate);
-      blogCard.appendChild(blogTitle);
+      blogCard.appendChild(blogText);
+      
   
       slide3.appendChild(blogCard);
   
