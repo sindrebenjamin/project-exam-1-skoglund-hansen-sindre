@@ -49,25 +49,25 @@ function toggleMenu() {
 const categories = new URLSearchParams(window.location.search).get('categories');
 const loadMore = document.querySelector(".load-more");
 
-console.log(categories);
 
 const blogContainer = document.querySelector(".blog-card-container");
 let page=1;
 
 async function fetchData() {
     try {
-        if (categories==null) {
+        if (categories===null) {
         
             const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed&page=${page}`);
             const result = await response.json();
             printData(result)
-            console.log(result);
+
             } else {
-                console.log("not empty");
+          
+                loadMore.style.display="none";
                 const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed&categories=${categories}`);
-            const result = await response.json();
-            printData(result)
-            console.log(result);
+                const result = await response.json();
+                printData(result)
+   
             }
     }
     catch(error) {
@@ -81,7 +81,7 @@ async function fetchData() {
 }
 
 loadMore.onclick = function() {
-    if (categories==null) {
+    if (categories===null) {
         page++;
         fetchData();
     }
@@ -117,6 +117,7 @@ function printData(data) {
         const blogImage = document.createElement("img");
         blogImage.classList.add("blog-image");
         blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+        blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
 
         //Category
 

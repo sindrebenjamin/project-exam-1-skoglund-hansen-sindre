@@ -8,6 +8,7 @@
 .wp-block-preformatted {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    margin-top: -1rem;
     margin-bottom: 2rem;
 }
 
@@ -35,7 +36,7 @@ article img {
 
 .wp-block-preformatted,
 .blog-category {
-    color: var(--nøytral500);
+    color: var(--nøytral600);
 }
 
 .blog-category {
@@ -129,13 +130,6 @@ article p {
 /* Comment form */
 
 
-.input-label-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
 #comment-form {
     margin-top: 1rem;
     font-size: 14px;
@@ -144,26 +138,7 @@ article p {
     padding: 1rem;
 }
 
-#comment-form input,
-#comment-form textarea {
-    border-radius: 8px;
-    border: 1px solid var(--nøytral400);
-    padding: 8px;
-    font-family: 'Montserrat', sans-serif;
-    background-color:  var(--nøytral100);
 
-}
-
-#comment-form input:focus,
-#comment-form textarea:focus {
-    outline: 1px solid var(--nøytral800);
-    border: 1px solid var(--nøytral100);
-    
-}
-
-#comment-form textarea {
-    resize: none;
-}
 
 
 

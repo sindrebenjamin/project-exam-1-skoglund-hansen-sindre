@@ -1,3 +1,7 @@
+
+
+
+
 //key: ]K;(3}.2J)Ej~S2a|.J|W+|c7{9_h@xts>;S&v/0A~(+s+%mZy0_*Ee.YP]25XwV
 
 
@@ -58,6 +62,29 @@ function printData(data) {
     article.appendChild(blogTitle);
     article.appendChild(blogContent);
     article.appendChild(authorBlock);
+
+
+
+    //Modal
+
+
+    const images = document.querySelectorAll("img");
+    const modal = document.querySelector(".modal");
+    const modalImage = document.querySelector(".modal-image");
+
+    images.forEach((img) => {
+        img.onclick = function() {
+           modal.classList.remove("hidden");
+           modalImage.src = img.src;
+           modalImage.alt = img.alt;
+        }
+    });
+
+    modal.onclick = function() {
+        modal.classList.add("hidden");
+    }
+    
+    
     
 }
 
@@ -140,3 +167,9 @@ commentForm.addEventListener(`submit`, async (event) => {
     fetchComments();
 
 });
+
+
+
+
+
+

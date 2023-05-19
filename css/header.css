@@ -5,9 +5,16 @@ header {
     min-height: 56px;
 }
 
-/* * {
-    border: 1px solid red;
-} */
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
 
 
 /* Mobile nav */
@@ -47,7 +54,7 @@ header {
 
 /* Logo */
 
-.logo {
+header .logo {
    margin-left: 1rem;
 } 
 

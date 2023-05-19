@@ -6,7 +6,6 @@ const productionButton = document.querySelector(".production-category");
 const soundDesignButton = document.querySelector(".sound-design-category");
 
 
-// Rydd opp i denne koden
 
  soundDesignButton.onclick = function() {
      const categories = [67];
@@ -56,8 +55,6 @@ musicTheoryButton.onclick = function() {
 const featuredContainer = document.querySelector(".featured-container");
 
 
-
-
 async function fetchData() {
 
     const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed");
@@ -69,6 +66,93 @@ async function fetchData() {
 
 fetchData();
 
+function printFeatured(data) {
+
+  let featuredNumber = 3;
+
+
+  const dateString = data[featuredNumber].date;
+  const date = new Date(dateString);
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
+      //Image
+
+      const blogImage = document.createElement("img");
+      blogImage.classList.add("blog-image-featured");
+      blogImage.src = data[featuredNumber]._embedded['wp:featuredmedia'][0].source_url;
+      blogImage.alt = data[featuredNumber]._embedded['wp:featuredmedia'][0].alt_text;
+
+      //Category
+
+      const blogCategory = document.createElement("div");
+      blogCategory.classList.add("blog-category", "border-radius");
+      blogCategory.innerHTML = data[featuredNumber]._embedded['wp:term'][0][0].name;
+  
+
+      //Date
+
+      const blogDate = document.createElement("p");
+      blogDate.classList.add("blog-date");
+      blogDate.innerHTML = formattedDate;
+
+
+      //Category-date
+
+      const blogCategoryDate = document.createElement("div");
+      blogCategoryDate.classList.add("flex", "blog-category-date");
+      blogCategoryDate.appendChild(blogCategory);
+      blogCategoryDate.appendChild(blogDate);
+      
+
+      //Title
+
+      const blogTitle = document.createElement("p");
+      blogTitle.classList.add("blog-title-featured");
+      blogTitle.innerHTML = data[featuredNumber].title.rendered;
+
+
+      //Excerpt
+
+      const blogExcerpt = document.createElement("p");
+      blogExcerpt.classList.add("blog-excerpt");
+      blogExcerpt.innerHTML = data[featuredNumber].excerpt.rendered;
+   
+
+      //Blog-card
+
+      const blogCard = document.createElement("a");
+      blogCard.classList.add("blog-card-featured");
+      blogCard.href=`../pages/post.html?id=${data[featuredNumber].id}`;
+    
+      blogCard.appendChild(blogCategoryDate);
+      blogCard.appendChild(blogTitle);
+      blogCard.appendChild(blogExcerpt);
+      blogCard.innerHTML += `<a href="../pages/post.html?id=${data[featuredNumber].id}" class="button-outlined">
+      <span>Read more</span
+      ><svg
+        width="15"
+        height="8"
+        viewBox="0 0 15 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z"
+          fill="#111111"
+        />
+      </svg>
+    </a>`;
+
+
+      //Post
+      featuredContainer.appendChild(blogImage);
+      featuredContainer.appendChild(blogCard);
+      
+}
+
+
+// Carousel
 
 function printCarousel(data) {
 
@@ -91,6 +175,7 @@ function printCarousel(data) {
     const blogImage = document.createElement("img");
     blogImage.classList.add("blog-image");
     blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+    blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
 
     //Category
 
@@ -153,6 +238,7 @@ function printCarousel(data) {
       const blogImage = document.createElement("img");
       blogImage.classList.add("blog-image");
       blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+      blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
   
       //Category
   
@@ -218,6 +304,7 @@ function printCarousel(data) {
       const blogImage = document.createElement("img");
       blogImage.classList.add("blog-image");
       blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+      blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
   
       //Category
   
@@ -276,93 +363,3 @@ function printCarousel(data) {
 
 }
 
-function printFeatured(data) {
-
-    let featuredNumber = 3;
-
-
-    const dateString = data[featuredNumber].date;
-    const date = new Date(dateString);
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const formattedDate = date.toLocaleDateString('en-US', options);
-
-    
-
-  
-
-        
-
-        //Image
-
-        const blogImage = document.createElement("img");
-        blogImage.classList.add("blog-image-featured");
-        blogImage.src = data[featuredNumber]._embedded['wp:featuredmedia'][0].source_url;
-        blogImage.alt = data[featuredNumber]._embedded['wp:featuredmedia'][0].alt_text;
-
-        //Category
-
-        const blogCategory = document.createElement("div");
-        blogCategory.classList.add("blog-category", "border-radius");
-        blogCategory.innerHTML = data[featuredNumber]._embedded['wp:term'][0][0].name;
-    
-
-        //Date
-
-        const blogDate = document.createElement("p");
-        blogDate.classList.add("blog-date");
-        blogDate.innerHTML = formattedDate;
-
-
-        //Category-date
-
-        const blogCategoryDate = document.createElement("div");
-        blogCategoryDate.classList.add("flex", "blog-category-date");
-        blogCategoryDate.appendChild(blogCategory);
-        blogCategoryDate.appendChild(blogDate);
-        
-
-        //Title
-
-        const blogTitle = document.createElement("p");
-        blogTitle.classList.add("blog-title-featured");
-        blogTitle.innerHTML = data[featuredNumber].title.rendered;
-
-
-        //Excerpt
-
-        const blogExcerpt = document.createElement("p");
-        blogExcerpt.classList.add("blog-excerpt");
-        blogExcerpt.innerHTML = data[featuredNumber].excerpt.rendered;
-     
-
-        //Blog-card
-
-        const blogCard = document.createElement("a");
-        blogCard.classList.add("blog-card-featured");
-        blogCard.href=`../pages/post.html?id=${data[featuredNumber].id}`;
-      
-        blogCard.appendChild(blogCategoryDate);
-        blogCard.appendChild(blogTitle);
-        blogCard.appendChild(blogExcerpt);
-        blogCard.innerHTML += `<a href="../pages/post.html?id=${data[featuredNumber].id}"><button class="button-outlined">
-        <span>Read more</span
-        ><svg
-          width="15"
-          height="8"
-          viewBox="0 0 15 8"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M14.3536 4.35355C14.5488 4.15829 14.5488 3.84171 14.3536 3.64645L11.1716 0.464466C10.9763 0.269204 10.6597 0.269204 10.4645 0.464466C10.2692 0.659728 10.2692 0.976311 10.4645 1.17157L13.2929 4L10.4645 6.82843C10.2692 7.02369 10.2692 7.34027 10.4645 7.53553C10.6597 7.7308 10.9763 7.7308 11.1716 7.53553L14.3536 4.35355ZM0 4.5H14V3.5H0V4.5Z"
-            fill="#111111"
-          />
-        </svg>
-      </button></a>`;
-
-
-        //Post
-        featuredContainer.appendChild(blogImage);
-        featuredContainer.appendChild(blogCard);
-        
-}

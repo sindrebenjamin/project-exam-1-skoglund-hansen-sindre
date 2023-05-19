@@ -1,0 +1,36 @@
+.input-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+
+
+.contact-form input,
+#comment-form input,
+#comment-form textarea,
+footer input,
+.contact-form textarea {
+    border-radius: 8px;
+    border: 1px solid var(--nøytral400);
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+    background-color:  var(--nøytral100);
+
+}
+
+
+#comment-form input:focus,
+#comment-form textarea:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 1px solid var(--nøytral800);
+    border: 1px solid var(--nøytral100);
+    
+}
+
+

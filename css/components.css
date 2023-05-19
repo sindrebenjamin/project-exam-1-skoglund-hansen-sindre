@@ -5,6 +5,7 @@
 }
 
 
+
 /* Buttons */
 
 .button-outlined,
@@ -34,6 +35,7 @@
     align-items: center;
     gap: 1rem;
     transform: translateY(0);
+    max-width: 160px;
 }
 
 .button-outlined:hover {
@@ -47,6 +49,7 @@
 .button-outlined-small {
     font-size: 11px;
     padding: 8px;
+    text-decoration: none;
 }
 
 .button-outlined-small:hover {
@@ -82,6 +85,21 @@ a.logo {
     color: white;
     font-size: 24px;
     align-items: center;
+    transition: 0.2s;
+}
+
+.logo svg {
+    fill: white;
+    transition: 0.2s;
+}
+
+
+.logo:hover  {
+    color: var(--nøytral300);
+}
+
+.logo:hover svg {
+    fill: var(--nøytral300);
 }
 
 .logo-heavy {
@@ -93,4 +111,22 @@ a.logo {
 
 input[type="text"] {
     font-family:'Montserrat', sans-serif;;
+}
+
+
+
+.banner {
+
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+@media (min-width: 932px) {
+    .banner {
+        height: 400px;
+    }
 }
