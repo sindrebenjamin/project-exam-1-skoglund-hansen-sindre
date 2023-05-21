@@ -44,10 +44,13 @@
 .category-wrapper select {
     border-radius: 8px;
     border: 1px solid var(--nøytral400);
+    cursor: pointer;
     padding: 8px;
     font-family: 'Montserrat', sans-serif;
     background-color:  var(--nøytral100);
+    width: 200px;
 }
+
 
 
 

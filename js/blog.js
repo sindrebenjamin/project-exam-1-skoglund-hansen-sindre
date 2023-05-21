@@ -107,14 +107,20 @@ fetchData();
 
 
 let searchQuery = new URLSearchParams(window.location.search).get('search');
-let printedResults = 1;
-console.log(printedResults)
+let printedResults = 0;
 
-if (printedResults > 9) {
-    loadMore.style.display = "block";
+
+
+function countResults() {
+
+if (printedResults >= 9) {
+    loadMore.style.display = "flex";
 } else {
     loadMore.style.display = "none";
 }
+
+}
+
 
 console.log(searchQuery);
 
@@ -123,12 +129,13 @@ console.log(searchQuery);
 function printData(data) {
 
 
-
+console.log(data)
 
     for (let i = postNumber; i < data.length; i++) {
 
         postContent = data[i].content.rendered.toLowerCase();
         postTitle = data[i].title.rendered.toLowerCase();
+        postCategory = data[i]._embedded['wp:term'][0][0].name.toLowerCase();
 
         if(searchQuery === null) {
             searchString = "";
@@ -139,10 +146,10 @@ function printData(data) {
 
         
 
-        if(postContent.includes(searchString) || postTitle.includes(searchString) || searchQuery === null) {
+        if(postContent.includes(searchString) || postTitle.includes(searchString) || postCategory.includes(searchString) || searchQuery === null) {
 
         printedResults++;
-
+        countResults();
         const dateString = data[i].date;
         const date = new Date(dateString);
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
