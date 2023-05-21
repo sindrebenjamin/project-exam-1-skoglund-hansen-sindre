@@ -11,7 +11,7 @@
 
 .filter-wrapper {
     /* grid-column: 1 / -1; */
-    margin-top: 48px;
+    margin-top: 1rem;
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,7 @@
 }
 
 .category-pill {
+    order: -1;
     background-color: var(--nøytral600);
     border: 1px solid var(--nøytral700);
     color: white;
@@ -38,7 +39,41 @@
     background-color: var(--nøytral700);
 }
 
+.unselected-wrapper {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    max-width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
 
+
+.unselected-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+.category-pill-unselected {
+    white-space: nowrap;
+    background-color: var(--nøytral800);
+    color: white;
+    padding: 0.5rem;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    border-radius: 8px;
+    width: fit-content;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.category-wrapper {
+    display: none;
+}
 
 .sort-wrapper select,
 .category-wrapper select {
@@ -142,11 +177,31 @@
 }
 
 
+@media (min-width: 600px) {
+
+    .category-pill {
+        order: 3;
+    }
+    .category-pill-unselected {
+        display: none;
+    }
+
+    .category-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .filter-wrapper {
+        
+        flex-direction: row;
+    }
+}
+
 @media (min-width: 932px) {
 
     .filter-wrapper {
         margin-left: 2rem;
-        flex-direction: row;
     }
 
     .load-more {

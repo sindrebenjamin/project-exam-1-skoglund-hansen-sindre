@@ -11,23 +11,45 @@ const categorySelect = document.querySelector("#category-select");
 
 // Categories
 
+const categoryPillsUnselected = document.querySelectorAll(".category-pill-unselected");
+
+categoryPillsUnselected.forEach(function(pill){
+    pill.onclick = function() {
+        window.location.href = `../pages/blog.html?categories=${pill.id}`;
+    }
+})
+
 function categoryIdToString(category) {
     if(category === "67") {
+        categorySelect.value = "67";
+        document.getElementById(`67`).style.display="none";
         return "Sound design";
+       
     } 
+    
     if(category === "63") {
+        categorySelect.value = "63";
+        document.getElementById(`63`).style.display="none";
         return "Production tips";
     }
     if(category === "52") {
+        categorySelect.value = "52";
+        document.getElementById(`52`).style.display="none";
         return "Mixing and mastering";
     }
     if(category === "40") {
+        categorySelect.value = "40";
+        document.getElementById(`40`).style.display="none";
         return "Gear";
     }
     if(category === "46") {
+        categorySelect.value = "46";
+        document.getElementById(`46`).style.display="none";
         return "Inspiration";
     }
     if(category === "59") {
+        categorySelect.value = "59";
+        document.getElementById(`59`).style.display="none";
         return "Music theory";
     }
 }
@@ -36,6 +58,7 @@ if(categories === null) {
     categoryParameter = ``;
     categoryPill.style.display = "none";
 } else {
+
     categoryParameter = `&categories=${categories}`;
     loadMore.style.display = "none";
     categoryPill.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,14 +145,12 @@ if (printedResults >= 9) {
 }
 
 
-console.log(searchQuery);
 
 
 
 function printData(data) {
 
 
-console.log(data)
 
     for (let i = postNumber; i < data.length; i++) {
 
