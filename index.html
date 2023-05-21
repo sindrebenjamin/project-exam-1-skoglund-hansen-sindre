@@ -8,6 +8,7 @@
     <script defer src="./js/script.js"></script>
     <script defer src="./js/fetch.js"></script>
     <script defer src="./js/carousel.js"></script>
+    <script defer src="./js/search.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/components.css" />
@@ -56,7 +57,12 @@
 
       <!-- searchbar -->
 
-      <form class="search-bar-form" action="">
+      <form
+        id="search-form"
+        class="search-bar-form"
+        action="./pages/blog.html"
+        method="GET"
+      >
         <div class="search-input-wrapper">
           <label class="visually-hidden" for="search">Search</label>
           <input

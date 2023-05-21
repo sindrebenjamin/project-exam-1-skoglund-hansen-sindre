@@ -7,7 +7,7 @@ const soundDesignButton = document.querySelector(".sound-design-category");
 
 
 
- soundDesignButton.onclick = function() {
+soundDesignButton.onclick = function() {
      const categories = [67];
      const urlParams = new URLSearchParams(window.location.search);
      urlParams.set('categories', categories[0]);
@@ -156,9 +156,6 @@ function printFeatured(data) {
 
 function printCarousel(data) {
 
-  console.log(data);
-
-  
 
   const slide1 = document.querySelector(".slide-1");
   const slide2 = document.querySelector(".slide-2");
@@ -182,14 +179,14 @@ function printCarousel(data) {
     const blogCategory = document.createElement("div");
     blogCategory.classList.add("blog-category", "border-radius");
     blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
-    console.log(blogCategory);
+ 
 
     //Date
 
     const blogDate = document.createElement("p");
     blogDate.classList.add("blog-date");
     blogDate.innerHTML = formattedDate;
-    console.log(blogDate);
+
 
     //Category-date
 
@@ -245,14 +242,14 @@ function printCarousel(data) {
       const blogCategory = document.createElement("div");
       blogCategory.classList.add("blog-category", "border-radius");
       blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
-      console.log(blogCategory);
+     
   
       //Date
   
       const blogDate = document.createElement("p");
       blogDate.classList.add("blog-date");
       blogDate.innerHTML = formattedDate;
-      console.log(blogDate);
+      
   
       //Category-date
   
@@ -311,14 +308,14 @@ function printCarousel(data) {
       const blogCategory = document.createElement("div");
       blogCategory.classList.add("blog-category", "border-radius");
       blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
-      console.log(blogCategory);
+    
   
       //Date
   
       const blogDate = document.createElement("p");
       blogDate.classList.add("blog-date");
       blogDate.innerHTML = formattedDate;
-      console.log(blogDate);
+      
   
       //Category-date
   
