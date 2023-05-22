@@ -103,6 +103,8 @@ fetchComments()
 function printComments(comments) {
 console.log(comments);
 
+commentSection.innerHTML = ``;
+
 const commentNumber = document.querySelector(".comment-number");
 
 commentNumber.innerHTML = comments.length + ` `;
@@ -133,6 +135,31 @@ commentNumber.innerHTML = comments.length + ` `;
     }
 }
 
+let generatedToken = "";
+
+async function token() {
+
+    const data = {
+        username: "admin",
+        password: "123456"
+    }
+    
+    const response = await fetch("https://sindre.codes/bingo/wp-json/jwt-auth/v1/token", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+
+    const result = await response.json();
+    console.log(result)
+    generatedToken = result.token;
+   
+}
+
+token();
+
+
 
 const commentForm = document.querySelector("#comment-form");
 
@@ -150,7 +177,8 @@ commentForm.addEventListener(`submit`, async (event) => {
         post: postId
     }
 
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaXNzIjoiaHR0cHM6Ly9zaW5kcmUuY29kZXMvYmluZ28vd3AtanNvbi93cC92Mi9jb21tZW50cyJ9.Hmp6G7CWF5p5evSOSZhS9G96xi5tGxxAc06GZ-BwBt0";
+    
+    const token = generatedToken;
     const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/comments", {
         method: "POST",
         headers: {
