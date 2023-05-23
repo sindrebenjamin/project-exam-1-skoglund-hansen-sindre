@@ -176,6 +176,7 @@ commentForm.addEventListener(`submit`, async (event) => {
         content: comment,
         post: postId
     }
+    
 
     
     const token = generatedToken;
