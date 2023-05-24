@@ -18,9 +18,9 @@
 }
 
 
-.category-wrapper::-webkit-scrollbar {
+ .category-wrapper::-webkit-scrollbar {
     display: none;
-}
+} 
 
 
 .category-box {

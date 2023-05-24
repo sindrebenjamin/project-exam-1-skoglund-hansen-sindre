@@ -21,9 +21,9 @@
 }
 
 
-.carousel-container::-webkit-scrollbar {
+ .carousel-container::-webkit-scrollbar {
     display: none;
-  }
+  } 
 
 .carousel-title-wrapper {
     justify-content: space-between;

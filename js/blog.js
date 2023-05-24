@@ -150,7 +150,9 @@ if (printedResults >= 9) {
 
 function printData(data) {
 
-
+if (page === 1 ) {
+    blogContainer.innerHTML = ``;
+}
 
     for (let i = postNumber; i < data.length; i++) {
 
