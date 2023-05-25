@@ -14,9 +14,6 @@ if (window.innerWidth >= 1100) {
 
     
 
-
-
-
 arrowLeft.onclick = function() {
     
     if(currentSlide === 0) {

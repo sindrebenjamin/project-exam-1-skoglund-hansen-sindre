@@ -1,25 +1,30 @@
-
-
-
-
-//key: ]K;(3}.2J)Ej~S2a|.J|W+|c7{9_h@xts>;S&v/0A~(+s+%mZy0_*Ee.YP]25XwV
-
-
-
-
-
+const postId = new URLSearchParams(window.location.search).get("id");
 const title = document.querySelector("title");
 const article = document.querySelector("article");
 const commentSection = document.querySelector(".comment-section");
-const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get("id");
+
 
 async function fetchData() {
 
-    const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts/${postId}?_embed`)
-    const result = await response.json();
-    console.log(result);
-    printData(result)
+    try {
+
+        const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts/${postId}?_embed`);
+        const result = await response.json();
+
+        if (response.ok) {
+            
+            printData(result);
+
+        }
+
+    } catch {
+        
+        article.innerHTML = `An error occured`;
+
+    }
+
+
+   
 }
 
 fetchData();
@@ -90,10 +95,26 @@ function printData(data) {
 
 
 async function fetchComments() {
-    
+
+    try {
+
         const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/comments?post=${postId}`)
         const result = await response.json();
-        printComments(result)
+
+        if (response.ok) {
+
+            printComments(result);
+
+        }
+        
+
+    } catch {
+
+        commentSection.innerHTML = `Error: Could not load comments`;
+
+    }
+    
+        
 
 }
 
@@ -101,7 +122,6 @@ fetchComments()
 
 
 function printComments(comments) {
-console.log(comments);
 
 commentSection.innerHTML = ``;
 
@@ -135,35 +155,11 @@ commentNumber.innerHTML = comments.length + ` `;
     }
 }
 
-let generatedToken = "";
-
-async function token() {
-
-    const data = {
-        username: "admin",
-        password: "123456"
-    }
-    
-    const response = await fetch("https://sindre.codes/bingo/wp-json/jwt-auth/v1/token", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-
-    const result = await response.json();
-    console.log(result)
-    generatedToken = result.token;
-   
-}
-
-token();
-
-
 
 const commentForm = document.querySelector("#comment-form");
 
 commentForm.addEventListener(`submit`, async (event) => { 
+
     event.preventDefault();
 
     const name = document.querySelector("#comment-author").value;
@@ -177,23 +173,38 @@ commentForm.addEventListener(`submit`, async (event) => {
         post: postId
     }
     
-
     
-    const token = generatedToken;
-    const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/comments", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(data)
-    })
+    const catchErrorComments = document.querySelector("#catch-error-comments");
+    
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
 
-    const result = await response.json();
-    console.log(result);
+    try {
+        
+        const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/comments", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+    
 
-    // commentForm.reset();
-    fetchComments();
+        if (response.ok) {
+
+            fetchComments();
+
+        }
+
+        
+
+    } catch (error){
+
+        catchErrorComments.style.display = "block";
+
+    }
+
+   
 
 });
 

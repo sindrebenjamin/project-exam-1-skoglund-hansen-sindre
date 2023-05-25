@@ -34,3 +34,30 @@ footer input,
 }
 
 
+.error,
+.success {
+    border-radius: 8px;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.error {
+    background-color: rgb(255, 107, 107,0.5);
+    color: rgb(138, 0, 0);
+    border: 1px solid rgb(138, 0, 0);
+    margin-top: -0.5rem;
+    
+}
+
+#catch-error,
+#catch-error-comments {
+    margin-top: 0.5rem;
+}
+
+.success {
+    background-color: rgba(107, 255, 119, 0.5);
+    color: rgb(0, 138, 46);
+    border: 1px solid rgb(0, 138, 46);
+    margin-top: 12px;
+}

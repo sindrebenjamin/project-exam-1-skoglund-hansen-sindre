@@ -1,30 +1,3 @@
-
-let generatedToken = "";
-
-async function token() {
-
-    const data = {
-        username: "admin",
-        password: "123456"
-    }
-    
-    const response = await fetch("https://sindre.codes/bingo/wp-json/jwt-auth/v1/token", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-
-    const result = await response.json();
-
-    generatedToken = result.token;
-   
-}
-
-token();
-
-
-
 async function validateForm(event) {
 
     event.preventDefault();
@@ -38,11 +11,13 @@ async function validateForm(event) {
     const message = document.querySelector("#message");
     const messageError = document.querySelector("#message-error");
     const sentSuccess = document.querySelector("#sent-success");
+    const catchError = document.querySelector("#catch-error");
     
 
     if (name.value.trim().length > 5) {
       
         nameError.style.display = "none";
+
     } else {
     
         nameError.style.display = "block";
@@ -50,6 +25,7 @@ async function validateForm(event) {
      
     }
     if (validateEmail(email.value) === true) {
+        
         emailError.style.display = "none";
 
     } else {
@@ -90,15 +66,19 @@ if (validMessage) {
 
     };
 
-    const token = generatedToken;
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
 
-    const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/form_data", {
+    
+    try {
+
+        const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/form_data", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify(data)
+
     })
 
 
@@ -111,8 +91,13 @@ if (validMessage) {
         sentSuccess.style.display = "block";
       }
 
-    //const result = await response.json();
-    //console.log(result);
+
+    } catch (error) {
+
+        catchError.style.display = "block";
+
+    }
+    
 
     }
 
@@ -128,6 +113,7 @@ form.addEventListener("submit", validateForm);
 
 
 function validateEmail(email) {
+
     const regEx = /\S+@\S+\.\S+/;
     const patternMatches = regEx.test(email);
     return patternMatches;

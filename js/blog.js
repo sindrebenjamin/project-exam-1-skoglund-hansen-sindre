@@ -1,12 +1,7 @@
-// Blog
-
 let categories = new URLSearchParams(window.location.search).get('categories');
 const loadMore = document.querySelector(".load-more");
 const categoryPill = document.querySelector(".category-pill");
 const categorySelect = document.querySelector("#category-select");
-
-
-
 
 
 // Categories
@@ -69,6 +64,7 @@ if(categories === null) {
 
 
 categorySelect.onchange = function() {
+
     if(categorySelect.value === "all") {
         window.location.href = "../pages/blog.html";
     } else {
@@ -77,7 +73,6 @@ categorySelect.onchange = function() {
 }
 
 categoryPill.onclick = function() {
-    // categories === null;
     window.location.href = "../pages/blog.html";
 }
 
@@ -94,17 +89,22 @@ async function fetchData() {
     
     try {
         
-        
             const response = await fetch(`https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed&per_page=20${categoryParameter}`);
             const result = await response.json();
-            postArray.push(...result);
-            printData(postArray)
+
+            if (response.ok) {
+
+                postArray.push(...result);
+                printData(postArray);
+
+            }
+           
             
     }
     
-    catch(error) {
+    catch (error) {
         blogContainer.innerHTML = "An error occured";
-        console.log(error);
+  
     }
 
    
@@ -160,13 +160,13 @@ if (page === 1 ) {
         postTitle = data[i].title.rendered.toLowerCase();
         postCategory = data[i]._embedded['wp:term'][0][0].name.toLowerCase();
 
+
         if(searchQuery === null) {
             searchString = "";
         } else {
             searchString = searchQuery.toLowerCase();
         }
        
-
         
 
         if(postContent.includes(searchString) || postTitle.includes(searchString) || postCategory.includes(searchString) || searchQuery === null) {

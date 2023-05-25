@@ -57,16 +57,33 @@ const featuredContainer = document.querySelector(".featured-container");
 
 async function fetchData() {
 
+  try {
+
     const response = await fetch("https://sindre.codes/bingo/wp-json/wp/v2/posts?_embed");
     const result = await response.json();
 
-    printFeatured(result);
-    printCarousel(result);
+    if (response.ok) {
+      printFeatured(result);
+      printCarousel(result);
+    }
+  
+
+  } catch {
+
+    featuredContainer.innerHTML = `An error occured`;
+  
+
+  }
+
+    
 }
 
 fetchData();
 
 function printFeatured(data) {
+
+
+  featuredContainer.innerHTML = ``;
 
   let featuredNumber = 3;
 
@@ -146,6 +163,7 @@ function printFeatured(data) {
 
 
       //Post
+
       featuredContainer.appendChild(blogImage);
       featuredContainer.appendChild(blogCard);
       
@@ -161,12 +179,16 @@ function printCarousel(data) {
   const slide2 = document.querySelector(".slide-2");
   const slide3 = document.querySelector(".slide-3");
 
+  slide1.innerHTML = ``;
+
+
   for (let i = 0; i < data.length; i++) {
 
   const dateString = data[i].date;
   const date = new Date(dateString);
   const options = { day: 'numeric', month: 'long', year: 'numeric' };
   const formattedDate = date.toLocaleDateString('en-US', options);
+
     //Image
 
     const blogImage = document.createElement("img");
@@ -202,21 +224,21 @@ function printCarousel(data) {
     blogTitle.classList.add("blog-title");
     blogTitle.innerHTML = data[i].title.rendered;
  
-      //Blog-text 
+    //Blog-text 
 
-      const blogText = document.createElement("div");
-      blogText.classList.add("blog-text");
-      blogText.appendChild(blogCategoryDate);
-      blogText.appendChild(blogTitle);
+    const blogText = document.createElement("div");
+    blogText.classList.add("blog-text");
+    blogText.appendChild(blogCategoryDate);
+    blogText.appendChild(blogTitle);
    
   
-      //Blog-card
+    //Blog-card
   
-      const blogCard = document.createElement("a");
-      blogCard.classList.add("blog-card", "border-radius");
-      blogCard.href=`../pages/post.html?id=${data[i].id}`;
-      blogCard.appendChild(blogImage);
-      blogCard.appendChild(blogText);
+    const blogCard = document.createElement("a");
+    blogCard.classList.add("blog-card", "border-radius");
+    blogCard.href=`../pages/post.html?id=${data[i].id}`;
+    blogCard.appendChild(blogImage);
+    blogCard.appendChild(blogText);
 
     slide1.appendChild(blogCard);
 
@@ -230,59 +252,60 @@ function printCarousel(data) {
     const date = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-US', options);
-      //Image
+
+    //Image
   
-      const blogImage = document.createElement("img");
-      blogImage.classList.add("blog-image");
-      blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
-      blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
+    const blogImage = document.createElement("img");
+    blogImage.classList.add("blog-image");
+    blogImage.src = data[i]._embedded['wp:featuredmedia'][0].source_url;
+    blogImage.alt = data[i]._embedded['wp:featuredmedia'][0].alt_text;
   
-      //Category
+    //Category
   
-      const blogCategory = document.createElement("div");
-      blogCategory.classList.add("blog-category", "border-radius");
-      blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
+    const blogCategory = document.createElement("div");
+    blogCategory.classList.add("blog-category", "border-radius");
+    blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
      
   
-      //Date
+    //Date
   
-      const blogDate = document.createElement("p");
-      blogDate.classList.add("blog-date");
-      blogDate.innerHTML = formattedDate;
+    const blogDate = document.createElement("p");
+    blogDate.classList.add("blog-date");
+    blogDate.innerHTML = formattedDate;
       
   
-      //Category-date
+    //Category-date
   
-      const blogCategoryDate = document.createElement("div");
-      blogCategoryDate.classList.add("flex", "blog-category-date");
-      blogCategoryDate.appendChild(blogCategory);
-      blogCategoryDate.appendChild(blogDate);
+    const blogCategoryDate = document.createElement("div");
+    blogCategoryDate.classList.add("flex", "blog-category-date");
+    blogCategoryDate.appendChild(blogCategory);
+    blogCategoryDate.appendChild(blogDate);
       
   
-      //Title
+    //Title
   
-      const blogTitle = document.createElement("p");
-      blogTitle.classList.add("blog-title");
-      blogTitle.innerHTML = data[i].title.rendered;
+    const blogTitle = document.createElement("p");
+    blogTitle.classList.add("blog-title");
+    blogTitle.innerHTML = data[i].title.rendered;
 
 
-         //Blog-text 
+    //Blog-text 
 
-         const blogText = document.createElement("div");
-         blogText.classList.add("blog-text");
-         blogText.appendChild(blogCategoryDate);
-         blogText.appendChild(blogTitle);
+    const blogText = document.createElement("div");
+    blogText.classList.add("blog-text");
+    blogText.appendChild(blogCategoryDate);
+    blogText.appendChild(blogTitle);
       
      
-         //Blog-card
+    //Blog-card
      
-         const blogCard = document.createElement("a");
-         blogCard.classList.add("blog-card", "border-radius");
-         blogCard.href=`../pages/post.html?id=${data[i].id}`;
-         blogCard.appendChild(blogImage);
-         blogCard.appendChild(blogText);
+    const blogCard = document.createElement("a");
+    blogCard.classList.add("blog-card", "border-radius");
+    blogCard.href=`../pages/post.html?id=${data[i].id}`;
+    blogCard.appendChild(blogImage);
+    blogCard.appendChild(blogText);
   
-      slide2.appendChild(blogCard);
+    slide2.appendChild(blogCard);
   
       if (i === 5) {
         break;
