@@ -4,6 +4,49 @@ const article = document.querySelector("article");
 const commentSection = document.querySelector(".comment-section");
 
 
+
+
+
+
+
+async function fetchToken() {
+
+const data = {
+
+    username: "public",
+    password: "123456"
+
+}
+
+    try {
+
+        const response = await fetch(`https://sindre.codes/bingo/wp-json/jwt-auth/v1/token`, {
+
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+
+
+        });
+
+        if(response.ok) {
+            const result = await response.json();
+            console.log(result.token);
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+
+
+}
+
+
+fetchToken();
+
+
 async function fetchData() {
 
     try {
@@ -176,7 +219,9 @@ commentForm.addEventListener(`submit`, async (event) => {
     
     const catchErrorComments = document.querySelector("#catch-error-comments");
     
-    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
+    // const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
+
+    const token = window.localStorage.getItem("token");
 
     try {
         

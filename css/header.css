@@ -56,7 +56,7 @@ header {
 
 header .logo {
    margin-left: 1rem;
-} 
+}  
 
 /* Search */
 
@@ -182,6 +182,7 @@ body.no-scroll {
     overflow: hidden;
 }
 
+
 @media (min-width: 600px) {
     .icon-search {
         display: none;
@@ -193,7 +194,15 @@ body.no-scroll {
     
 }
 
+
+
 @media (min-width: 1200px) {
+
+    header .logo {
+        margin-left: 0rem;
+     } 
+
+
     .icon-wrapper {
         display: none;
     
@@ -232,9 +241,7 @@ body.no-scroll {
         margin-left: 0;
     }
 
-    .logo {
-        margin-left: 0rem;
-     } 
+   
 
      header {
         padding: 0 1.5rem;
