@@ -6,13 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script defer src="../js/signup.js"></script>
+    <link rel="stylesheet" href="../css/forms.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/userform.css" />
   </head>
   <body>
-    <form action="" id="sign-up">
-      <input placeholder="username" type="text" id="username" />
-      <input placeholder="email" type="email" id="email" />
-      <input placeholder="password" type="password" id="password" />
-      <input type="submit" />
-    </form>
+    <div class="form-wrapper">
+      <form action="" id="sign-up">
+        <h1>Sign Up</h1>
+        <div class="input-label-wrapper">
+          <label for="username">Username</label
+          ><input placeholder="Username" type="text" id="username" />
+        </div>
+        <div class="input-label-wrapper">
+          <label for="email">Email</label
+          ><input placeholder="email@example.com" type="email" id="email" />
+        </div>
+        <div class="input-label-wrapper">
+          <label for="password">Password</label
+          ><input placeholder="********" type="password" id="password" />
+        </div>
+
+        <button class="button-filled" type="submit">
+          <span>Sign up</span>
+        </button>
+        <p>
+          Already have a user?
+          <a href="login.html">Login</a>
+        </p>
+      </form>
+    </div>
   </body>
 </html>

@@ -5,6 +5,21 @@ header {
     min-height: 56px;
 }
 
+.divider {
+    display: none;
+}
+
+
+.user-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+
+
 .visually-hidden {
     position: absolute;
     overflow: hidden;
@@ -182,6 +197,23 @@ body.no-scroll {
     overflow: hidden;
 }
 
+.login-button {
+    font-size: 0.8125rem;
+    padding: 8px 24px;
+    color: var(--nøytral800);
+    background-color: white; 
+    border: transparent;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+a.login-button {
+    color: var(--nøytral800);
+}
+
+.login-button:hover {
+    background-color: var(--nøytral200);
+}
 
 @media (min-width: 600px) {
     .icon-search {
@@ -198,6 +230,18 @@ body.no-scroll {
 
 @media (min-width: 1200px) {
 
+    .divider {
+        display: block;
+        color: var(--nøytral600);
+    }
+
+    .user-container {
+        font-size: 0.8125rem;
+    }
+
+    .user-wrapper {
+        flex-direction: row;
+    }
     header .logo {
         margin-left: 0rem;
      } 
@@ -236,6 +280,14 @@ body.no-scroll {
     .mobile-nav a:hover {
         color: white;
     }
+
+    a.login-button {
+        color: var(--nøytral800);
+    }
+
+    a.login-button:hover {
+        color: var(--nøytral800);
+    } 
 
     .search-bar-form {
         margin-left: 0;

@@ -29,7 +29,9 @@ loginForm.addEventListener("submit", async (event) => {
             console.log(result);
             window.localStorage.setItem("token", result.token);
             window.localStorage.setItem("user_email", result.user_email);
-            fetchUser(result)
+            window.localStorage.setItem("username", result.user_display_name);
+            window.location.href="../index.html"
+            //fetchUser(result)
         }
 
 

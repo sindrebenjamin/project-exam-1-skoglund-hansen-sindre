@@ -205,13 +205,14 @@ commentForm.addEventListener(`submit`, async (event) => {
 
     event.preventDefault();
 
-    const name = document.querySelector("#comment-author").value;
-    const email = document.querySelector("#comment-email").value;
+    // const name = document.querySelector("#comment-author").value;
+    // const email = document.querySelector("#comment-email").value;
     const comment = document.querySelector("#comment-content").value;
 
+
     const data = {
-        author_name: name,
-        author_email: email,
+        author_name: window.localStorage.getItem("username"),
+        author_email: window.localStorage.getItem("user_email"),
         content: comment,
         post: postId
     }
@@ -219,9 +220,8 @@ commentForm.addEventListener(`submit`, async (event) => {
     
     const catchErrorComments = document.querySelector("#catch-error-comments");
     
-    // const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
 
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem("token"); 
 
     try {
         

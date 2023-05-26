@@ -3,7 +3,7 @@ const userName = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
-const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTAxMzk2NiwibmJmIjoxNjg1MDEzOTY2LCJleHAiOjE2ODU2MTg3NjYsImRhdGEiOnsidXNlciI6eyJpZCI6IjEifX19.1qO2VQaKnmcXVJkWKJfWGoFMHbLFYWgvtRGW6cBrfUQ";
+const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTExOTUwNSwibmJmIjoxNjg1MTE5NTA1LCJleHAiOjE2ODU3MjQzMDUsImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.YoRW93N9BS_uJyL1wz8_ZJc-3he7j9c7LGrXB38wf_4";
 
 
 signUpForm.addEventListener("submit", async (event) => {
@@ -33,7 +33,7 @@ signUpForm.addEventListener("submit", async (event) => {
         if(response.ok) {
             const result = await response.json();
             console.log(result);
-            window.location.href="login.html"
+            userConfirmation()
         }
 
 
@@ -43,3 +43,10 @@ signUpForm.addEventListener("submit", async (event) => {
 
 
 });
+
+
+
+function userConfirmation() {
+    signUpForm.innerHTML = `<h1>User created successfully</h1> <a href="login.html">Go to login page</a>`;
+}
+
