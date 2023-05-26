@@ -29,6 +29,7 @@ loginForm.addEventListener("submit", async (event) => {
             window.localStorage.setItem("user_email", result.user_email);
             window.localStorage.setItem("username", result.user_display_name);
             window.location.href="../index.html"
+            
         } else if(!response.ok) {
             loginError.style.display = "flex";
         }
