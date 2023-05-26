@@ -1,10 +1,9 @@
-// Check user
+// Check login
 
 const loginButton = document.querySelector(".login-button");
 const logoutButton = document.querySelector(".logout-button");
 const userContainer = document.querySelector(".user-container");
 const userWrapper = document.querySelector(".user-wrapper");
-
 
 
 //localStorage.clear()
@@ -17,8 +16,8 @@ if(window.localStorage.getItem("token")) {
     
 } else {
     console.log("empty token")
+
     userWrapper.style.display = "none";
-    
     
 }
 

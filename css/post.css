@@ -83,7 +83,8 @@ article p {
     margin: 3rem auto;
 }
 
-.author-avatar {
+.author-avatar,
+.profile-picture {
     max-width: 48px;
     border-radius: 100px;
     margin-bottom: 0.5rem;
@@ -102,11 +103,28 @@ article p {
     gap: 1rem;
 }
 
-.comment-wrapper {
+.comment-wrapper,
+.login-or-signup {
     background-color: white;
     border-radius: 8px;
     padding: 16px;
     font-size: 0.8125rem;
+}
+
+.login-or-signup {
+    display: none;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 4rem;
+}
+
+.login-or-signup a {
+    color: var(--nøytral800);
+    transition: 0.2s;
+}
+
+.login-or-signup a:hover {
+    color: var(--nøytral600);
 }
 
 .comment-info {
@@ -140,9 +158,14 @@ article p {
     background-color: white;
     border-radius: 8px;
     padding: 1rem;
+    /* display: flex; */
 }
 
-
+.profile-picture-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 
 

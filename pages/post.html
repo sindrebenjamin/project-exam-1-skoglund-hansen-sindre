@@ -113,6 +113,12 @@
           <a href="blog.html">Blog</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
+          <a class="login-button" href="login.html">Login</a>
+          <div class="user-wrapper">
+            <div class="divider">|</div>
+            <div class="user-container"></div>
+            <a class="login-button logout-button" href="logout.html">Logout</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -139,30 +145,15 @@
         <article class="blog-post"></article>
         <section class="comments">
           <h3><span class="comment-number"></span>Comments</h3>
+          <div class="login-or-signup">
+            <a href="login.html">Login</a> or
+            <a href="signup.html">Sign up</a> to leave a comment.
+          </div>
           <form id="comment-form">
-            <div class="name-email-wrapper">
-              <div class="input-label-wrapper">
-                <label for="comment-author">Name</label>
-                <input
-                  placeholder="Your full name"
-                  type="text"
-                  name="author_name"
-                  id="comment-author"
-                />
-              </div>
-              <div class="input-label-wrapper">
-                <label for="comment-email">Email</label>
-                <input
-                  placeholder="mail@email.com"
-                  type="email"
-                  name="author_email"
-                  id="comment-email"
-                />
-              </div>
-            </div>
-
             <div class="input-label-wrapper">
-              <label for="comment-content">Comment</label>
+              <label class="visually-hidden" for="comment-content"
+                >Comment</label
+              >
               <textarea
                 placeholder="Add a comment..."
                 name="content"
@@ -170,7 +161,14 @@
                 rows="5"
               ></textarea>
             </div>
-            <button class="button-filled" type="submit">Send</button>
+            <div class="profile-picture-button-wrapper">
+              <img
+                class="profile-picture"
+                src="../images/profilepicture.png"
+                alt="Profile picture"
+              />
+              <button class="button-filled" type="submit">Send</button>
+            </div>
             <div class="error" id="catch-error-comments">
               <p>An error occured</p>
             </div>

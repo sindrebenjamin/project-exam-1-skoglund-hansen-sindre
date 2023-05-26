@@ -4,10 +4,13 @@
     display: flex;
 }
 
-
 .loader {
-    min-height: 100vh;
-   
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .spinner {
@@ -18,7 +21,7 @@
     border: 6px solid rgb(215, 215, 215);
     border-top: 6px solid var(--nøytral600);
     animation: spin 0.8s linear infinite;
-    margin: 2rem auto;
+    /* margin: 2rem auto; */
 } 
 
 

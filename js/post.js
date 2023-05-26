@@ -1,3 +1,18 @@
+// Check login
+
+if(window.localStorage.getItem("token")) {
+    console.log("active token")
+    
+} else {
+    console.log("empty token")
+    const commentForm = document.querySelector("#comment-form");
+    const loginOrSignup = document.querySelector(".login-or-signup")
+    commentForm.style.display = "none";
+    loginOrSignup.style.display = "block";
+    
+}
+
+
 const postId = new URLSearchParams(window.location.search).get("id");
 const title = document.querySelector("title");
 const article = document.querySelector("article");
@@ -205,9 +220,9 @@ commentForm.addEventListener(`submit`, async (event) => {
 
     event.preventDefault();
 
-    // const name = document.querySelector("#comment-author").value;
-    // const email = document.querySelector("#comment-email").value;
-    const comment = document.querySelector("#comment-content").value;
+    const commentContent = document.querySelector("#comment-content");
+
+    const comment = commentContent.value;
 
 
     const data = {
@@ -236,6 +251,8 @@ commentForm.addEventListener(`submit`, async (event) => {
     
 
         if (response.ok) {
+
+            commentContent.value = ``;
 
             fetchComments();
 

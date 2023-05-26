@@ -3,6 +3,7 @@ header {
     align-items: center;
     position: relative;
     min-height: 56px;
+    
 }
 
 .divider {
@@ -223,12 +224,12 @@ a.login-button {
     .search-bar-form {
         display: flex;
     }
-    
+
 }
 
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
 
     .divider {
         display: block;
@@ -297,6 +298,7 @@ a.login-button {
 
      header {
         padding: 0 1.5rem;
+        gap: 2rem;
      }
 
 

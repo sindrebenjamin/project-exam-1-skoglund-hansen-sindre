@@ -2,7 +2,7 @@ let categories = new URLSearchParams(window.location.search).get('categories');
 const loadMore = document.querySelector(".load-more");
 const categoryPill = document.querySelector(".category-pill");
 const categorySelect = document.querySelector("#category-select");
-
+const loader = document.querySelector(".loader");
 
 // Categories
 
@@ -53,7 +53,8 @@ if(categories === null) {
     categoryParameter = ``;
     categoryPill.style.display = "none";
 } else {
-
+    
+    categoryPill.style.display = "flex";
     categoryParameter = `&categories=${categories}`;
     loadMore.style.display = "none";
     categoryPill.innerHTML = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,9 +151,8 @@ if (printedResults >= 9) {
 
 function printData(data) {
 
-if (page === 1 ) {
-    blogContainer.innerHTML = ``;
-}
+    loader.style.display = "none";
+
 
     for (let i = postNumber; i < data.length; i++) {
 
