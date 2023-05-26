@@ -17,6 +17,18 @@ header {
     align-items: center;
     gap: 1rem;
     color: white;
+    width: 100%;
+}
+
+.user-container {
+    margin-top: 1.5rem;
+}
+
+.mobile-divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--nøytral700);
+    order: 0;
 }
 
 
@@ -216,6 +228,7 @@ a.login-button {
     background-color: var(--nøytral200);
 }
 
+
 @media (min-width: 600px) {
     .icon-search {
         display: none;
@@ -231,17 +244,24 @@ a.login-button {
 
 @media (min-width: 1300px) {
 
+    .mobile-divider {
+        display: none;
+    }
+
     .divider {
         display: block;
         color: var(--nøytral600);
     }
 
+   
     .user-container {
         font-size: 0.8125rem;
+        margin-top: 0;
     }
 
     .user-wrapper {
         flex-direction: row;
+        width: fit-content;
     }
     header .logo {
         margin-left: 0rem;
