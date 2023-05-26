@@ -7,11 +7,22 @@ const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRy
 
 
 signUpForm.addEventListener("submit", async (event) => {
-   
 
-    console.log(userName.value + email.value + password.value)
     event.preventDefault();
-   
+
+    const emailError = document.querySelector("#email-error-signup");
+
+    if (validateEmail(email.value) === true) {
+        
+        emailError.style.display = "none";
+
+    } else {
+        emailError.style.display = "flex";
+        
+
+    }
+
+
 
     const data = {
         username: userName.value,
@@ -50,3 +61,15 @@ function userConfirmation() {
     signUpForm.innerHTML = `<h1>User created successfully</h1> <a href="login.html">Go to login page</a>`;
 }
 
+
+
+
+
+function validateEmail(email) {
+
+    const regEx = /\S+@\S+\.\S+/;
+    const patternMatches = regEx.test(email);
+    return patternMatches;
+    
+
+}

@@ -1,13 +1,12 @@
 const loginForm = document.querySelector("#login");
 const userName = document.querySelector("#username");
 const password = document.querySelector("#password");
+const loginError = document.querySelector("#login-error");
 
-// localStorage.clear();
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    //localStorage.clear();
-   
+
 
     const data = {
         username: userName.value,
@@ -25,17 +24,21 @@ loginForm.addEventListener("submit", async (event) => {
         });
 
         if(response.ok) {
-            const result = await response.json();
-            console.log(result);
+            const result = await response.json(); 
             window.localStorage.setItem("token", result.token);
             window.localStorage.setItem("user_email", result.user_email);
             window.localStorage.setItem("username", result.user_display_name);
             window.location.href="../index.html"
-            //fetchUser(result)
+        } else if(!response.ok) {
+            loginError.style.display = "flex";
         }
 
 
     } catch(error) {
+
+        console.log("hei")
+        console.log(error)
+        
 
     }
 

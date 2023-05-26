@@ -17,7 +17,7 @@ const postId = new URLSearchParams(window.location.search).get("id");
 const title = document.querySelector("title");
 const article = document.querySelector("article");
 const commentSection = document.querySelector(".comment-section");
-
+const loader = document.querySelector(".loader");
 
 
 
@@ -88,6 +88,8 @@ async function fetchData() {
 fetchData();
 
 function printData(data) {
+
+    loader.style.display = "none";
 
     title.innerHTML = `MixPath | ` + data.title.rendered;
 

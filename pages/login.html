@@ -110,7 +110,11 @@
         <h1>Login</h1>
         <div class="input-label-wrapper">
           <label for="username">Username</label
-          ><input id="username" type="text" placeholder="Your username" />
+          ><input
+            id="username"
+            type="text"
+            placeholder="Your username or email"
+          />
         </div>
 
         <div class="input-label-wrapper">
@@ -120,6 +124,9 @@
         <button class="button-filled" type="submit">
           <span>Login</span>
         </button>
+        <div class="user-error" id="login-error">
+          <p>Wrong password or username</p>
+        </div>
         <p>
           Don't have a user?
           <a href="signup.html">Sign up</a>
