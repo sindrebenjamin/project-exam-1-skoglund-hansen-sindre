@@ -21,7 +21,7 @@
 }
 
 .contact-person-container h3 {
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .job-title {
@@ -67,7 +67,7 @@
 
 .contact-form {
     border: 1px solid var(--nøytral800);
-    font-size: 14px;
+    font-size: 0.8125rem;
     background-color: white;
     border-radius: 8px;
     padding: 24px;
@@ -87,7 +87,7 @@
 @media (min-width: 700px) {
 
     h2 {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 
     .contact-form {

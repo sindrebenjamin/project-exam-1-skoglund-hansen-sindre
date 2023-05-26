@@ -13,93 +13,93 @@
 /* Typography */
 
 .display-large {
-    font-size: 57px;
+    font-size: 3.563rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .display-medium {
-    font-size: 45px;
+    font-size: 2.813rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .display-small {
-    font-size: 36px;
+    font-size: 2.25rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .heading-large {
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .heading-medium {
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .heading-small {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .title-large {
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .title-medium {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .title-small {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.2;
     font-weight: bold;
 }
 
 .body-large {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.2;
     font-weight: normal;
 }
 
 .body-medium {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.2;
     font-weight: normal;
 }
 
 .body-small {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.2;
     font-weight: normal;
 }
 
 .label-large {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0.1;
 }
 
 .label-medium {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0.5;
 }
 
 .label-small {
-    font-size: 11px;
+    font-size: 0.688rem;
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0.5;

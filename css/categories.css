@@ -51,7 +51,7 @@
 
 .blog-categories h2 {
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 .category-box svg {
@@ -70,7 +70,7 @@
     }
 
     .blog-categories h2 {
-        font-size: 28px;
+        font-size: 1.75rem;
         margin-bottom: 2rem;
     }
 

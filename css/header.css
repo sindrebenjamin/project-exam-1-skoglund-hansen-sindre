@@ -228,7 +228,7 @@ body.no-scroll {
     }
 
     .mobile-nav a {
-        font-size: 14px;
+        font-size: 0.8125rem;
         color: var(--nøytral400);
         transition: 0.2s;
     }

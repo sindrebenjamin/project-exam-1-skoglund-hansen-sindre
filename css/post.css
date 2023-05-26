@@ -11,7 +11,7 @@
 
 .wp-block-preformatted {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-top: -1rem;
     margin-bottom: 2rem;
 }
@@ -44,12 +44,12 @@ article img {
 }
 
 .blog-category {
-    font-size: 12px;
+    font-size: 0.75rem;
   
 }
 
 .blog-title {
-    font-size: 24px;
+    font-size: 1.5rem;
 
 }
 
@@ -58,18 +58,18 @@ h1 {
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 article p {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -106,7 +106,7 @@ article p {
     background-color: white;
     border-radius: 8px;
     padding: 16px;
-    font-size: 14px;
+    font-size: 0.8125rem;
 }
 
 .comment-info {
@@ -136,7 +136,7 @@ article p {
 
 #comment-form {
     margin-bottom: 1rem;
-    font-size: 14px;
+    font-size: 0.8125rem;
     background-color: white;
     border-radius: 8px;
     padding: 1rem;
@@ -158,12 +158,12 @@ article p {
     }
 
     .blog-category {
-        font-size: 14px;
+        font-size: 0.8125rem;
       
     }
     
     .blog-title {
-        font-size: 28px;
+        font-size: 1.75rem;
     
     }
 
