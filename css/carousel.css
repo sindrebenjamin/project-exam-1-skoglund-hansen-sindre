@@ -90,17 +90,18 @@
     gap: 1rem;
 }
 
+.blog-category,
+.blog-date {
+    font-size: 0.6875rem;
+}
+
 .blog-category {
     background-color: var(--nøytral800);
     color: white;
     padding: 0.5rem;
-    font-size: 0.6875rem;
     font-weight: bold;
 }
 
-.blog-date {
-    font-size: 0.6875rem;
-}
 
 .blog-category-date {
     display: flex;
@@ -117,7 +118,6 @@
 
     .carousel-title-wrapper h2 {
         font-size: 1.75rem;
-     
     }
 
     .carousel-title-wrapper {
@@ -128,12 +128,9 @@
         margin-left: 0;
     }
 
-    
     .carousel {
         max-width: 900px;
         margin: 0 auto 4rem auto;
-     
-  
     }
 
   
@@ -143,7 +140,6 @@
 
     
     .slide {
-
         width: 100%;
         position: absolute;
     }
@@ -159,15 +155,13 @@
 
     .slide-3 {
         padding-right: 0;
-        }
+    }
 
     
-
-  .carousel {
-    overflow: hidden;
-  }
+    .carousel {
+        overflow: hidden;
+    }
    
-
     .carousel-container {
         width: 1080px;
         margin: 0 auto;
@@ -186,20 +180,9 @@
     }
 
     .carousel-container svg:hover {
-        display: block;
         fill: var(--nøytral600) 
     }
 
-    .carousel-container.disabled svg {
-        fill: var(--nøytral100);
-        cursor: default;
-    }
-
-
-    .blog-image {
-        width: 100%;
-    }
-    
     
 }
 
