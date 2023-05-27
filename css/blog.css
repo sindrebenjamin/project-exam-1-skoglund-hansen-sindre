@@ -110,6 +110,7 @@
 }
 
 .blog-category {
+    border-radius: 8px;
     background-color: var(--nøytral800);
     color: white;
     padding: 0.5rem;
@@ -118,6 +119,7 @@
 
 
 .blog-category-date {
+    display: flex;
     gap: 0.5rem;
     align-items: center;
 }

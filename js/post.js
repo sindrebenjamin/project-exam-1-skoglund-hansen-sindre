@@ -54,7 +54,7 @@ function printData(data) {
     //Category
 
     const blogCategory = document.createElement("p");
-    blogCategory.classList.add("blog-category", "border-radius");
+    blogCategory.classList.add("blog-category");
     blogCategory.innerHTML = data._embedded['wp:term'][0][0].name;
 
 

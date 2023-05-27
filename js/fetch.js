@@ -103,7 +103,7 @@ function printFeatured(data) {
       //Category
 
       const blogCategory = document.createElement("div");
-      blogCategory.classList.add("blog-category", "border-radius");
+      blogCategory.classList.add("blog-category");
       blogCategory.innerHTML = data[featuredNumber]._embedded['wp:term'][0][0].name;
   
 
@@ -117,7 +117,7 @@ function printFeatured(data) {
       //Category-date
 
       const blogCategoryDate = document.createElement("div");
-      blogCategoryDate.classList.add("flex", "blog-category-date");
+      blogCategoryDate.classList.add("blog-category-date");
       blogCategoryDate.appendChild(blogCategory);
       blogCategoryDate.appendChild(blogDate);
       
@@ -198,7 +198,7 @@ function printCarousel(data) {
     //Category
 
     const blogCategory = document.createElement("div");
-    blogCategory.classList.add("blog-category", "border-radius");
+    blogCategory.classList.add("blog-category");
     blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
  
 
@@ -212,7 +212,7 @@ function printCarousel(data) {
     //Category-date
 
     const blogCategoryDate = document.createElement("div");
-    blogCategoryDate.classList.add("flex", "blog-category-date");
+    blogCategoryDate.classList.add("blog-category-date");
     blogCategoryDate.appendChild(blogCategory);
     blogCategoryDate.appendChild(blogDate);
     
@@ -234,7 +234,7 @@ function printCarousel(data) {
     //Blog-card
   
     const blogCard = document.createElement("a");
-    blogCard.classList.add("blog-card", "border-radius");
+    blogCard.classList.add("blog-card");
     blogCard.href=`../pages/post.html?id=${data[i].id}`;
     blogCard.appendChild(blogImage);
     blogCard.appendChild(blogText);
@@ -262,7 +262,7 @@ function printCarousel(data) {
     //Category
   
     const blogCategory = document.createElement("div");
-    blogCategory.classList.add("blog-category", "border-radius");
+    blogCategory.classList.add("blog-category");
     blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
      
   
@@ -276,7 +276,7 @@ function printCarousel(data) {
     //Category-date
   
     const blogCategoryDate = document.createElement("div");
-    blogCategoryDate.classList.add("flex", "blog-category-date");
+    blogCategoryDate.classList.add("blog-category-date");
     blogCategoryDate.appendChild(blogCategory);
     blogCategoryDate.appendChild(blogDate);
       
@@ -299,7 +299,7 @@ function printCarousel(data) {
     //Blog-card
      
     const blogCard = document.createElement("a");
-    blogCard.classList.add("blog-card", "border-radius");
+    blogCard.classList.add("blog-card");
     blogCard.href=`../pages/post.html?id=${data[i].id}`;
     blogCard.appendChild(blogImage);
     blogCard.appendChild(blogText);
@@ -328,7 +328,7 @@ function printCarousel(data) {
       //Category
   
       const blogCategory = document.createElement("div");
-      blogCategory.classList.add("blog-category", "border-radius");
+      blogCategory.classList.add("blog-category");
       blogCategory.innerHTML = data[i]._embedded['wp:term'][0][0].name;
     
   
@@ -342,7 +342,7 @@ function printCarousel(data) {
       //Category-date
   
       const blogCategoryDate = document.createElement("div");
-      blogCategoryDate.classList.add("flex", "blog-category-date");
+      blogCategoryDate.classList.add("blog-category-date");
       blogCategoryDate.appendChild(blogCategory);
       blogCategoryDate.appendChild(blogDate);
       
@@ -364,7 +364,7 @@ function printCarousel(data) {
       //Blog-card
   
       const blogCard = document.createElement("a");
-      blogCard.classList.add("blog-card", "border-radius");
+      blogCard.classList.add("blog-card");
       blogCard.href=`../pages/post.html?id=${data[i].id}`;
       blogCard.appendChild(blogImage);
       blogCard.appendChild(blogText);

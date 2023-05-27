@@ -20,16 +20,10 @@ body {
     border: 1px solid black;
 }
 
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-}
 
 .page-container {
     margin: 0 16px;
 }
-
-
 
 
 @media  (min-width: 932px) {

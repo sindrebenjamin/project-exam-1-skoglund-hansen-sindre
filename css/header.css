@@ -3,7 +3,8 @@ header {
     align-items: center;
     position: relative;
     min-height: 56px;
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 .login-container {
