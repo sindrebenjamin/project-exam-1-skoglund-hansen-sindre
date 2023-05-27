@@ -7,13 +7,17 @@ header {
     justify-content: space-between;
 }
 
-.login-container {
+.login-container,
+.user-wrapper,
+.mobile-nav a {
     color: white;
+}
+
+.login-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-
 }
 
 .login-container p {
@@ -33,24 +37,19 @@ header {
     display: none;
 }
 
-
 .user-wrapper {
     display: none;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    color: white;
     width: 100%;
 }
-
 
 .mobile-divider {
     height: 1px;
     width: 100%;
     background-color: var(--nøytral700);
 }
-
-
 
 .visually-hidden {
     position: absolute;
@@ -85,7 +84,6 @@ header {
 }
 
 .mobile-nav a {
-    color: white;
     text-decoration: none;
 }
 
@@ -107,15 +105,12 @@ header .logo {
 
 /* Search */
 
-
 .search-bar-form {
     display: none;
     flex-grow: 1;
     max-width: 600px;
     margin-left: 1rem;
 }
-
-
 
 .search-input-wrapper {
     display: flex;
@@ -134,17 +129,13 @@ header .logo {
     flex-grow: 1;
 }
 
-
 /* searchbar active */
 
 .search-bar-form.open {
     display: flex;
 }
 
-.icon-search.open {
-    display: none;
-}
-
+.icon-search.open,
 .logo.open {
     display: none;
 }
@@ -162,7 +153,6 @@ header .logo {
     padding: 1rem;
 }
  
-
 /* Burger menu */
 
 .menu-btn {
@@ -229,9 +219,7 @@ body.no-scroll {
 }
 
 .login-button {
-   
     padding: 8px 24px;
-    color: var(--nøytral800);
     background-color: white; 
     border: transparent;
     border-radius: 8px;
@@ -248,6 +236,7 @@ a.login-button {
 
 
 @media (min-width: 600px) {
+
     .icon-search {
         display: none;
     }
@@ -271,7 +260,6 @@ a.login-button {
     .login-container {
         flex-direction: row;
         gap: 0.5rem;
-        
     }
 
     .sign-up {
@@ -288,15 +276,11 @@ a.login-button {
         color: var(--nøytral600);
     }
 
-   
-    .user-container {
-        margin-top: 0;
-    }
-
     .user-wrapper {
         flex-direction: row;
         width: fit-content;
     }
+
     header .logo {
         margin-left: 0rem;
      } 
@@ -304,7 +288,6 @@ a.login-button {
 
     .icon-wrapper {
         display: none;
-    
     }
 
     .mobile-nav-wrapper {
@@ -355,12 +338,9 @@ a.login-button {
         margin-left: 0;
     }
 
-   
-
-     header {
+    header {
         padding: 0 1.5rem;
         gap: 2rem;
-     }
-
+    }
 
 }
