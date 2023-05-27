@@ -37,7 +37,6 @@ loginForm.addEventListener("submit", async (event) => {
 
     } catch(error) {
 
-        console.log("hei")
         console.log(error)
         
 

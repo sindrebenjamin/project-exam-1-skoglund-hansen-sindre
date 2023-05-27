@@ -53,6 +53,7 @@
 .unselected-wrapper {
     margin-top: 1rem;
     padding-left: 1rem;
+    padding-right: 1rem;
     max-width: 100%;
     display: flex;
     gap: 0.5rem;

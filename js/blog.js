@@ -19,7 +19,6 @@ function categoryIdToString(category) {
         categorySelect.value = "67";
         document.getElementById(`67`).style.display="none";
         return "Sound design";
-        
     } 
     
     if(category === "63") {

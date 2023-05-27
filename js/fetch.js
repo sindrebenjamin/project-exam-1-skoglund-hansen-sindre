@@ -179,7 +179,8 @@ function printCarousel(data) {
   const slide3 = document.querySelector(".slide-3");
 
   slide1.innerHTML = ``;
-
+  slide2.innerHTML = ``;
+  slide3.innerHTML = ``;
 
   for (let i = 0; i < data.length; i++) {
 

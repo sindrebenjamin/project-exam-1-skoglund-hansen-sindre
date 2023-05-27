@@ -11,15 +11,16 @@ signUpForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const emailError = document.querySelector("#email-error-signup");
+    const signUpError = document.querySelector("#signup-error");
+    let validEmail = false;
 
     if (validateEmail(email.value) === true) {
-        
         emailError.style.display = "none";
+        validEmail = true;
 
     } else {
         emailError.style.display = "flex";
-        
-
+        validEmail = false;
     }
 
 
@@ -42,14 +43,16 @@ signUpForm.addEventListener("submit", async (event) => {
         });
 
         if(response.ok) {
-            const result = await response.json();
-            console.log(result);
+            //const result = await response.json();
             userConfirmation()
+        } else if(!response.ok && validEmail) {
+            signUpError.style.display = "block";
         }
 
 
     } catch(error) {
         console.log(error)
+        
     }
 
 

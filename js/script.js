@@ -6,8 +6,6 @@ const userContainer = document.querySelector(".user-container");
 const userWrapper = document.querySelector(".user-wrapper");
 const loginContainer = document.querySelector(".login-container");
 
-//localStorage.clear()
-
 if(window.localStorage.getItem("token")) {
 
     loginContainer.style.display = "none";
