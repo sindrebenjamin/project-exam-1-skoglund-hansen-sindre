@@ -159,6 +159,11 @@
 
 @media (min-width: 600px) {
 
+    .ghost {
+        display: block;
+        order: 3;
+    }
+
     .category-pill {
         order: 3;
     }
@@ -180,10 +185,7 @@
 
 @media (min-width: 932px) {
 
-    .ghost {
-        display: block;
-        order: 3;
-    }
+    
 
     .filter-wrapper {
         margin-left: 2rem;

@@ -234,6 +234,27 @@ a.login-button {
     background-color: var(--nøytral200);
 }
 
+@media (prefers-color-scheme: dark) {
+
+    .menu-btn-burger,
+    .menu-btn-burger::before,
+    .menu-btn-burger::after {
+       
+        background-color: white !important;
+  
+}
+
+}
+
+.menu-btn-burger,
+    .menu-btn-burger::before,
+    .menu-btn-burger::after {
+       
+        background-color: white !important;
+  
+}
+
+
 
 @media (min-width: 600px) {
 
@@ -344,3 +365,4 @@ a.login-button {
     }
 
 }
+
