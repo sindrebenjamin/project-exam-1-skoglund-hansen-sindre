@@ -138,9 +138,8 @@ function printFeatured(data) {
 
       //Blog-card
 
-      const blogCard = document.createElement("a");
+      const blogCard = document.createElement("div");
       blogCard.classList.add("blog-card-featured");
-      blogCard.href=`../pages/post.html?id=${data[featuredNumber].id}`;
     
       blogCard.appendChild(blogCategoryDate);
       blogCard.appendChild(blogTitle);

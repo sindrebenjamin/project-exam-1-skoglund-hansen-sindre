@@ -5,11 +5,9 @@
     background-repeat: no-repeat;
 }
 
-
 article img {
     object-fit: cover;
     width: 100%;
-
     max-height: 580px;
     margin: 1rem 0;
 }
@@ -30,7 +28,7 @@ article h2 {
 
 @media (min-width: 932px) {
   
-    h2 {
+    article h2 {
         font-size: 1.75rem;
     }
 
