@@ -1,17 +1,12 @@
 // Check login
 
-if(window.localStorage.getItem("token")) {
-    console.log("active token")
-    
-} else {
-    console.log("empty token")
+if(!window.localStorage.getItem("token")) {
     const commentForm = document.querySelector("#comment-form");
     const loginOrSignup = document.querySelector(".login-or-signup")
     commentForm.style.display = "none";
     loginOrSignup.style.display = "block";
     
-}
-
+} 
 
 const postId = new URLSearchParams(window.location.search).get("id");
 const title = document.querySelector("title");
@@ -22,44 +17,6 @@ const loader = document.querySelector(".loader");
 
 
 
-
-
-async function fetchToken() {
-
-const data = {
-
-    username: "public",
-    password: "123456"
-
-}
-
-    try {
-
-        const response = await fetch(`https://sindre.codes/bingo/wp-json/jwt-auth/v1/token`, {
-
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data)
-
-
-        });
-
-        if(response.ok) {
-            const result = await response.json();
-            console.log(result.token);
-        }
-
-    } catch (error) {
-        console.log(error)
-    }
-
-
-}
-
-
-fetchToken();
 
 
 async function fetchData() {
@@ -75,7 +32,7 @@ async function fetchData() {
 
         }
 
-    } catch {
+    } catch(error) {
         
         article.innerHTML = `An error occured`;
 
@@ -117,6 +74,7 @@ function printData(data) {
    
 
     //Author
+
     const authorBlock = document.createElement("div");
     authorBlock.classList.add("author-block");
     authorBlock.innerHTML = `<img src=${data._embedded.author[0].avatar_urls[48]} alt="avatar" class="author-avatar"> <p class="author-name">${data._embedded.author[0].name}</p>
@@ -131,7 +89,6 @@ function printData(data) {
 
 
     //Modal
-
 
     const images = document.querySelectorAll("img");
     const modal = document.querySelector(".modal");
@@ -168,7 +125,7 @@ async function fetchComments() {
         }
         
 
-    } catch {
+    } catch(error) {
 
         commentSection.innerHTML = `Error: Could not load comments`;
 

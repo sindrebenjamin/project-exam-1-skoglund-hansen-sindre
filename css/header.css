@@ -6,6 +6,24 @@ header {
     
 }
 
+.login-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.login-button {
+    font-size: 1rem;
+}
+
+.sign-up {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .divider {
     display: none;
 }
@@ -28,7 +46,6 @@ header {
     height: 1px;
     width: 100%;
     background-color: var(--nøytral700);
-    order: 0;
 }
 
 
@@ -169,7 +186,6 @@ header .logo {
     background-color: white;
     transition: all .3s ease-in-out;
     border-radius: 5px;
-    /* display: block; */
 }
 
 .menu-btn-burger::before {
@@ -211,7 +227,7 @@ body.no-scroll {
 }
 
 .login-button {
-    font-size: 0.8125rem;
+   
     padding: 8px 24px;
     color: var(--nøytral800);
     background-color: white; 
@@ -244,6 +260,23 @@ a.login-button {
 
 @media (min-width: 1300px) {
 
+    .login-container,
+    .user-container,
+    .mobile-nav a {
+        font-size: 0.8125rem;
+    }
+
+    .login-container {
+        flex-direction: row;
+        gap: 0.5rem;
+        
+    }
+
+    .sign-up {
+        display: flex;
+        gap: 0.5rem;
+    }
+
     .mobile-divider {
         display: none;
     }
@@ -255,7 +288,6 @@ a.login-button {
 
    
     .user-container {
-        font-size: 0.8125rem;
         margin-top: 0;
     }
 
@@ -293,7 +325,6 @@ a.login-button {
     }
 
     .mobile-nav a {
-        font-size: 0.8125rem;
         color: var(--nøytral400);
         transition: 0.2s;
     }
@@ -309,6 +340,14 @@ a.login-button {
     a.login-button:hover {
         color: var(--nøytral800);
     } 
+
+    a.sign-up-link {
+        color: white;
+    }
+
+    a.sign-up-link:hover {
+        color: var(--nøytral200);
+    }
 
     .search-bar-form {
         margin-left: 0;
