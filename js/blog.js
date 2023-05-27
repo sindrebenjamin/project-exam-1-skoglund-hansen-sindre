@@ -19,7 +19,7 @@ function categoryIdToString(category) {
         categorySelect.value = "67";
         document.getElementById(`67`).style.display="none";
         return "Sound design";
-       
+        
     } 
     
     if(category === "63") {
@@ -47,13 +47,22 @@ function categoryIdToString(category) {
         document.getElementById(`59`).style.display="none";
         return "Music theory";
     }
+    
 }
+
+
+const blogContainer = document.querySelector(".blog-card-container");
+let page = 1;
+let postNumber = 0;
+let postArray = [];
+
+
 
 if(categories === null) {
     categoryParameter = ``;
     categoryPill.style.display = "none";
 } else {
-    
+    ghostPosts();
     categoryPill.style.display = "flex";
     categoryParameter = `&categories=${categories}`;
     loadMore.style.display = "none";
@@ -61,7 +70,9 @@ if(categories === null) {
     <path d="M3.25491 3.25496C3.37796 3.13207 3.54475 3.06304 3.71866 3.06304C3.89257 3.06304 4.05936 3.13207 4.18241 3.25496L6.99991 6.07246L9.81741 3.25496C9.89762 3.16858 9.99965 3.10543 10.1127 3.07216C10.2258 3.0389 10.3458 3.03676 10.46 3.06596C10.5742 3.09516 10.6784 3.15463 10.7617 3.23809C10.8449 3.32155 10.9041 3.42593 10.933 3.54021C10.9623 3.65429 10.9602 3.77414 10.9271 3.88716C10.894 4.00017 10.8311 4.10219 10.7449 4.18246L7.92741 6.99996L10.7449 9.81746C10.8313 9.89767 10.8944 9.9997 10.9277 10.1128C10.961 10.2259 10.9631 10.3459 10.9339 10.4601C10.9047 10.5743 10.8452 10.6785 10.7618 10.7617C10.6783 10.845 10.5739 10.9042 10.4597 10.9331C10.3456 10.9623 10.2257 10.9603 10.1127 10.9272C9.9997 10.8941 9.89769 10.8311 9.81741 10.745L6.99991 7.92746L4.18241 10.745C4.05793 10.8608 3.89339 10.9239 3.72336 10.921C3.55333 10.918 3.39106 10.8493 3.27066 10.7292C3.15057 10.6088 3.08184 10.4465 3.0789 10.2765C3.07596 10.1065 3.13905 9.94194 3.25491 9.81746L6.07241 6.99996L3.25491 4.18246C3.13202 4.05941 3.06299 3.89262 3.06299 3.71871C3.06299 3.5448 3.13202 3.37801 3.25491 3.25496Z" fill="white"/>
     </svg>
     ` + categoryIdToString(categories);	
+    
 }
+
 
 
 categorySelect.onchange = function() {
@@ -77,10 +88,11 @@ categoryPill.onclick = function() {
     window.location.href = "../pages/blog.html";
 }
 
-const blogContainer = document.querySelector(".blog-card-container");
-let page = 1;
-let postNumber = 0;
-let postArray = [];
+
+function ghostPosts() {
+    blogContainer.innerHTML += `<div class="ghost"></div><div class="ghost"></div><div class="ghost"></div>`
+}
+
 
 
 // Fetch data
@@ -236,6 +248,11 @@ function printData(data) {
         
        
     }
+
+   
+      
+        
+    
 
 }
 

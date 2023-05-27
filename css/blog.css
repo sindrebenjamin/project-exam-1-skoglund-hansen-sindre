@@ -1,3 +1,7 @@
+.ghost {
+    display: none;
+}
+
 .big-wrapper {
     min-height: 100vh;
 } 
@@ -175,6 +179,11 @@
 }
 
 @media (min-width: 932px) {
+
+    .ghost {
+        display: block;
+        order: 3;
+    }
 
     .filter-wrapper {
         margin-left: 2rem;
