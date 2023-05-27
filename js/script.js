@@ -4,19 +4,18 @@ const loginButton = document.querySelector(".login-button");
 const logoutButton = document.querySelector(".logout-button");
 const userContainer = document.querySelector(".user-container");
 const userWrapper = document.querySelector(".user-wrapper");
-
+const loginContainer = document.querySelector(".login-container");
 
 //localStorage.clear()
 
 if(window.localStorage.getItem("token")) {
-    console.log("active token")
-    loginButton.style.display = "none";
+
+    loginContainer.style.display = "none";
     userWrapper.style.display = "flex";
-    userContainer.innerHTML = `Hi, ${window.localStorage.getItem("username")}`
+    userContainer.innerHTML = `Hi, ${window.localStorage.getItem("username")}`;
     
 } else {
-    console.log("empty token")
-
+   
     userWrapper.style.display = "none";
     
 }

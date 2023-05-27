@@ -15,6 +15,10 @@ header {
 
 }
 
+.login-container p {
+    user-select: none;
+}
+
 .login-button {
     font-size: 1rem;
 }
@@ -38,9 +42,6 @@ header {
     width: 100%;
 }
 
-.user-container {
-    margin-top: 1.5rem;
-}
 
 .mobile-divider {
     height: 1px;
