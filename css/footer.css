@@ -49,7 +49,6 @@
     fill: var(--nøytral300);
 }
 
-
 .logo-socials-wrapper {
     display: flex;
     flex-direction: column;
@@ -69,6 +68,7 @@
 
 
 @media (min-width: 400px) {
+    
     .sign-up-button {
         width: fit-content;
     }
