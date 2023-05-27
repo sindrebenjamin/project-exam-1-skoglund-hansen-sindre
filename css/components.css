@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* Spinner */
+
 .loader {
    height: 100%;
    width: 100%;
@@ -10,16 +12,13 @@
 }
 
 .spinner {
-
     height: 100px;
     width: 100px;
     border-radius: 100px;
     border: 6px solid rgb(215, 215, 215);
     border-top: 6px solid var(--nøytral600);
     animation: spin 0.8s linear infinite;
-    /* margin: 2rem auto; */
 } 
-
 
 @keyframes spin {
     0% {
@@ -51,10 +50,12 @@
     background-color: white;
 }
 
-
+.button-outlined,
+.button-filled {
+    font-size: 	0.8125rem;
+}
 
 .button-outlined {
-    font-size: 	0.8125rem;
     padding: 8px 24px;
     box-shadow: 0px 4px 0px var(--nøytral800);
     display: flex;
@@ -71,8 +72,6 @@
     transform: translateY(4px);
 }
 
-
-
 .button-outlined-small {
     font-size: 0.6875rem;
     padding: 8px;
@@ -83,20 +82,15 @@
     background-color: var(--nøytral200);
 }
 
-
 .button-filled {
-    font-size: 0.8125rem;
     padding: 8px 24px;
     color: white;
     background-color: var(--nøytral800);
     border: transparent;
 }
 
-
 .button-filled:hover {
-
     background-color: var(--nøytral700);
-
 }
 
 
@@ -136,13 +130,13 @@ a.logo {
 /* Forms */
 
 input[type="text"] {
-    font-family:'Montserrat', sans-serif;;
+    font-family:'Montserrat', sans-serif;
 }
 
 
+/* Banner */
 
 .banner {
-
     height: 200px;
     display: flex;
     align-items: center;
