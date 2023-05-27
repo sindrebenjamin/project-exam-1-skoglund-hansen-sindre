@@ -2,7 +2,7 @@
     overflow-x: auto;
     -ms-overflow-style: none; 
     scrollbar-width: none;
-
+    
 }
 
 .carousel-container svg {
@@ -17,6 +17,8 @@
     height: 360px;
     position: relative; 
     margin-bottom: 48px;
+    
+   
 }
 
 
@@ -49,6 +51,10 @@
 
 .slide-1 {
    margin-left: 1rem;
+}
+
+.slide-3 {
+    padding-right: 1rem;
 }
 
 /* Blog card */
@@ -122,6 +128,11 @@
 
     .slide-1 {
         margin-left: 0;
+    }
+
+    
+    .slide-3 {
+    padding-right: 0;
     }
     
     .carousel {
