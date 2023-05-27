@@ -1,23 +1,21 @@
 body {
     overflow-y: scroll;
-  }
+}
 
 header {
     position: absolute;
     width: 100%;
-  }
+}
 
 .user-error {
     color: rgb(212, 0, 0);
     display: none;
-  
 }
 
 #email-error-signup {
     display: none;
     margin-top: -24px;
     margin-bottom: 1rem;
-
 }
 
 .error-container {
@@ -32,9 +30,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-   
 }
-
 
 #login,
 #sign-up,
