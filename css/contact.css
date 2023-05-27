@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+
 }
 
 .contact-person-container img {
@@ -35,7 +35,7 @@
 }
 
 .team-wrapper {
-
+    margin-bottom: 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     
@@ -74,19 +74,13 @@
     box-shadow: 0px 4px 0px var(--nøytral800);
 }
 
-
-
-
-
-
-
 .contact-form textarea {
     resize: none;
 }
 
 @media (min-width: 700px) {
 
-    h2 {
+    .contact-form h2 {
         font-size: 1.75rem;
     }
 
@@ -105,7 +99,6 @@
 
     .contact-introduction img {
         margin-bottom: 0rem;
-        /* max-width: 125px; */
     }
 }
 
