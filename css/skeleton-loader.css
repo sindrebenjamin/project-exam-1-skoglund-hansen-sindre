@@ -37,7 +37,6 @@
 .blog-title-featured-loader,
 .excerpt-featured-loader {
     height: calc(120px - (72 * ((100vw - 320px) / (936 - 320))));
-    
 }
 
 .excerpt-featured-loader {
@@ -91,8 +90,6 @@
     gap: 24px;
 }
 
-
-
 @keyframes skeleton-loader {
     0% {
        background-position: 0%;
@@ -108,7 +105,6 @@
 
     }
 }
-
 
 @media (min-width: 936px) {
 
@@ -127,17 +123,12 @@
     width: 342px;
 }
 
-
-
 .blog-title-featured-loader {
     height: 96px;
 }
 
-
-
 .excerpt-featured-loader {
     height: 76px;
-    
 }
     
 }
