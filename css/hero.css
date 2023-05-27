@@ -14,11 +14,9 @@
     padding: 1rem;
     color: white;
     text-align: center;
-   
 }
 
 .hero p {
-
     max-width: 225px;
 }
 
@@ -34,7 +32,6 @@ h1 span {
 
 
 .hero-btn {
-
     font-size: 0.8125rem;
     padding: 8px 24px;
     color: white;
@@ -47,7 +44,6 @@ h1 span {
 
 .hero-btn:hover {
     background-color: #014a81;
-    
 }
 
 
