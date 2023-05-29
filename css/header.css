@@ -120,6 +120,8 @@ header .logo {
     margin-left: 1rem;
 }
 
+
+
 .search-input-wrapper {
     display: flex;
     align-items: center;
@@ -136,6 +138,8 @@ header .logo {
     border: transparent;
     flex-grow: 1;
 }
+
+
 
 /* searchbar active */
 
