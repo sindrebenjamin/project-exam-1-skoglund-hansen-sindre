@@ -1,11 +1,19 @@
+.header-spacer {
+    height: 56px;
+}
+
 header {
     background-color: var(--nøytral800);
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     min-height: 56px;
     display: flex;
     justify-content: space-between;
+    z-index: 9999;
 }
+
 
 .login-container,
 .user-wrapper,
