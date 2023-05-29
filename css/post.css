@@ -171,7 +171,17 @@ article p {
     justify-content: space-between;
 }
 
+@media (min-width: 500px) {
 
+    article img {
+        max-height: 500px;
+    }
+
+    .wp-block-cover__image-background {
+        height: 500px;
+    }
+    
+}
 
 @media (min-width: 936px) {
 
