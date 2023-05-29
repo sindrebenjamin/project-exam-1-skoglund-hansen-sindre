@@ -162,8 +162,8 @@ if (printedResults >= 9) {
 
 function printData(data) {
 
-    loader.style.display = "none";
 
+    loader.style.display = "none";
 
     for (let i = postNumber; i < data.length; i++) {
 
@@ -239,12 +239,13 @@ function printData(data) {
 
         if(page === 1 && i === 9) {
             break;
+        } else {
+            loadMore.style.display = "none";
         }
 
         }
-        
 
-        
+
        
     }
 
@@ -260,28 +261,45 @@ function printData(data) {
 
 const sortBy = document.querySelector("#sort-by");
 
+
+
+
 sortBy.onchange = function() {
 
+
+   
     postNumber = 0;
 
     if(sortBy.value === "alpha-asc") {
         postArray.sort((a, b) => a.title.rendered.localeCompare(b.title.rendered));
         blogContainer.innerHTML = ``;	
+        if (categories) {
+            ghostPosts();
+        }
         printData(postArray);
 
     } else if(sortBy.value === "alpha-desc") {
         postArray.sort((a, b) => b.title.rendered.localeCompare(a.title.rendered));
         blogContainer.innerHTML = ``;	
+        if (categories) {
+            ghostPosts();
+        }
         printData(postArray);
 
     } else if(sortBy.value === "date-desc") {
         postArray.sort((a, b) => new Date(b.date) - new Date(a.date));
         blogContainer.innerHTML = ``;	
+        if (categories) {
+            ghostPosts();
+        }
         printData(postArray);
 
     } else if(sortBy.value === "date-asc") { 
         postArray.sort((a, b) => new Date(a.date) - new Date(b.date));
         blogContainer.innerHTML = ``;	
+        if (categories) {
+            ghostPosts();
+        }
         printData(postArray);
 
     }

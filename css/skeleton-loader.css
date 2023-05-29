@@ -108,9 +108,13 @@
 
 @media (min-width: 936px) {
 
+
+.hide-desktop {
+    display: none;
+}
+
     
 .featured-loader-container {
-
     flex-direction: row;
     align-items: center;
 }
