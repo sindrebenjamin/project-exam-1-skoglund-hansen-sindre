@@ -66,7 +66,7 @@ if (validMessage) {
 
     };
 
-    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTEzOTcwNCwibmJmIjoxNjg1MTM5NzA0LCJleHAiOjE2ODU3NDQ1MDQsImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.mkfuv59iD8fpQdmtvGBxt31HjC1H7H3l3r_YlOPI0uY";
+    const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTkxNTc4NSwibmJmIjoxNjg1OTE1Nzg1LCJleHAiOjE2ODY1MjA1ODUsImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.RyQ7Yd7Lm5LnWttDAyuW88bIffPvd6ToH81Ekpk89SU";
 
     
 
