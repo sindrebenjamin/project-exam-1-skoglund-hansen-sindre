@@ -3,7 +3,7 @@ const userName = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
-const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTExOTUwNSwibmJmIjoxNjg1MTE5NTA1LCJleHAiOjE2ODU3MjQzMDUsImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.YoRW93N9BS_uJyL1wz8_ZJc-3he7j9c7LGrXB38wf_4";
+const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3NpbmRyZS5jb2Rlcy9iaW5nbyIsImlhdCI6MTY4NTkxNTc4NSwibmJmIjoxNjg1OTE1Nzg1LCJleHAiOjE2ODY1MjA1ODUsImRhdGEiOnsidXNlciI6eyJpZCI6IjMifX19.RyQ7Yd7Lm5LnWttDAyuW88bIffPvd6ToH81Ekpk89SU";
 
 
 signUpForm.addEventListener("submit", async (event) => {
