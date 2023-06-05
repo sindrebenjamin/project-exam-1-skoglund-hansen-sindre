@@ -54,11 +54,10 @@ const blogContainer = document.querySelector(".blog-card-container");
 let page = 1;
 let postNumber = 0;
 let postArray = [];
-
+let categoryParameter = ``;
 
 
 if(categories === null) {
-    categoryParameter = ``;
     categoryPill.style.display = "none";
 } else {
     ghostPosts();
@@ -71,7 +70,6 @@ if(categories === null) {
     ` + categoryIdToString(categories);	
     
 }
-
 
 
 categorySelect.onchange = function() {
@@ -116,7 +114,6 @@ async function fetchData() {
     
     catch (error) {
         blogContainer.innerHTML = "An error occured";
-  
     }
 
    
@@ -144,6 +141,9 @@ fetchData();
 let searchQuery = new URLSearchParams(window.location.search).get('search');
 let printedResults = 0;
 
+if(searchQuery) {
+    ghostPosts();
+}
 
 
 function countResults() {
@@ -167,9 +167,9 @@ function printData(data) {
 
     for (let i = postNumber; i < data.length; i++) {
 
-        postContent = data[i].content.rendered.toLowerCase();
-        postTitle = data[i].title.rendered.toLowerCase();
-        postCategory = data[i]._embedded['wp:term'][0][0].name.toLowerCase();
+        let postContent = data[i].content.rendered.toLowerCase();
+        let postTitle = data[i].title.rendered.toLowerCase();
+        let postCategory = data[i]._embedded['wp:term'][0][0].name.toLowerCase();
 
 
         if(searchQuery === null) {
